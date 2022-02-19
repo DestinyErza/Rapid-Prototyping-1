@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Powerup
+  - Trap
+  - WallUP
+  - InstaKill
   layers:
   - Default
   - TransparentFX

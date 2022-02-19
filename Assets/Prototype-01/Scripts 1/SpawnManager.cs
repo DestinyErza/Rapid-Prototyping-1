@@ -11,6 +11,13 @@ public class SpawnManager : MonoBehaviour
     public int waveNumber;
 
     public GameObject powerupPrefab;
+    public GameObject WallPowerUp;
+    public GameObject InstaKill;
+    public GameObject Trap_Falling;
+
+  
+
+
 
     /// <summary>
     /// spawns enemy at random spawn location using the instantiation of a prefab (+ one per each wave for both enemy and powerups) (waves triggered when enemy count = 0)
@@ -29,8 +36,20 @@ public class SpawnManager : MonoBehaviour
         {
             waveNumber++; SpawnEnemyWave(waveNumber);
             Instantiate(powerupPrefab, GenerateSpawnPosition(), powerupPrefab.transform.rotation);
+
+
+            Instantiate(WallPowerUp, GenerateSpawnPosition(), WallPowerUp.transform.rotation);
+
+            Instantiate(InstaKill, GenerateSpawnPosition(), InstaKill.transform.rotation);
         }
     }
+
+    /* public void SpawnFall()
+     {
+         Debug.Log("test");
+        Instantiate(Trap_Falling, GenerateSpawnPosition(), Trap_Falling.transform.rotation)
+     }*/
+
     /// <summary>
     /// spawns enemy wave when enemies are cleared
     /// </summary>
