@@ -6,34 +6,35 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRb;
     private SpawnManager SM;
-    private GameObject focalPoint;
-    public GameObject powerupIndicator;
-    public GameObject Wall;
 
-    public float speed = 5.0f;
+
+    public GameObject powerupIndicator;
+    public GameObject EntryWall;
+
+    public float speed = 2.0f;
     public float powerupStrength = 15.0f;
 
     public bool hasPowerup;
     public bool hasInstaKill;
 
 
-
-
-
     void Start()
     {
         SM = GetComponent<SpawnManager>();
         playerRb = GetComponent<Rigidbody>();
-        focalPoint = GameObject.Find("Focal Point");
     }
-    /// <summary>
-    /// moves player using vertical input based on the focal point
-    /// </summary>
+   
 
     void Update()
     {
-        float forwardInput = Input.GetAxis("Vertical");
-        playerRb.AddForce(focalPoint.transform.forward * speed * forwardInput);
+        //wasd, arrow imput movement
+        float Horizontal = Input.GetAxis("Horizontal");
+        float Vertical = Input.GetAxis("Vertical");
+        Vector3 move = new Vector3(Horizontal, 0.0f, Vertical);
+        playerRb.AddForce(move * speed);
+        
+
+
         //places poweup below player
         powerupIndicator.transform.position = transform.position + new Vector3(0, -0.5f, 0);
 
@@ -50,20 +51,15 @@ public class PlayerController : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
+
+
+        //fix into wall repair
         if (other.CompareTag("Powerup"))
         {
             hasPowerup = true;
             powerupIndicator.gameObject.SetActive(true);
             Destroy(other.gameObject);
             StartCoroutine(PowerupCountdownRoutine());
-        }
-
-        //turns on wall+ rns ienumerator to turn it off
-        if (other.CompareTag("WallUP"))
-        {
-            Wall.gameObject.SetActive(true);
-            Destroy(other.gameObject);
-            StartCoroutine(WallCountdownRoutine());
         }
 
         if (other.CompareTag("InstaKill"))
@@ -73,15 +69,11 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(IKCountdownRoutine());
         }
 
-        //trap triggers falling objects
-
-
-        /*if (other.CompareTag("Trap"))
+        if (other.CompareTag("EntryTrigger"))
         {
-            Debug.Log("uh oh");
-            Destroy(other.gameObject);
-            SM.SpawnFall();
-        }*/
+            EntryWall.gameObject.SetActive(true);
+        }
+
     }
 
 
@@ -98,11 +90,7 @@ public class PlayerController : MonoBehaviour
         powerupIndicator.gameObject.SetActive(false);
     }
     //wallcountdown
-    IEnumerator WallCountdownRoutine()
-    {
-        yield return new WaitForSeconds(10);
-        Wall.gameObject.SetActive(false);
-    }
+ 
     //InstaKillcountdown
     IEnumerator IKCountdownRoutine()
     {
@@ -133,5 +121,5 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
+ 
 }

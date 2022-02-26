@@ -39,7 +39,7 @@ public class TweenFun : JMC
 
     void CameraShake()
     {
-        Camera.main.DOShakePosition(tweenTime * 2, 0.4f);
+       // Camera.main.DOShakePosition(tweenTime * 2, 0.4f);
     }
 
     void ChangeScale()
