@@ -10,6 +10,8 @@ TagManager:
   - WallUP
   - InstaKill
   - EntryTrigger
+  - BWall
+  - PWall
   layers:
   - Default
   - TransparentFX

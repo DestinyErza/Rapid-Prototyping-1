@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
+    public Transform[] spawnPoints;
     public Transform playerBody;
     private Vector3 offset;
     //follows player using offset instead of childing the item

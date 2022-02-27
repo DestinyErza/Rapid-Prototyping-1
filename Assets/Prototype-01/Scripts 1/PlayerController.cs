@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +12,10 @@ public class PlayerController : MonoBehaviour
 
     public GameObject powerupIndicator;
     public GameObject EntryWall;
+    public GameObject resetPoint;
+
+    public int Score;
+    public TMP_Text scoreText;
 
     public float speed = 2.0f;
     public float powerupStrength = 15.0f;
@@ -18,10 +24,15 @@ public class PlayerController : MonoBehaviour
     public bool hasInstaKill;
 
 
+
+
     void Start()
     {
         SM = GetComponent<SpawnManager>();
         playerRb = GetComponent<Rigidbody>();
+        resetPoint = GameObject.Find("Reset_Point");
+
+        
     }
    
 
@@ -32,9 +43,9 @@ public class PlayerController : MonoBehaviour
         float Vertical = Input.GetAxis("Vertical");
         Vector3 move = new Vector3(Horizontal, 0.0f, Vertical);
         playerRb.AddForce(move * speed);
-        
 
-
+        scoreText.text = "score: " + Score;
+       
         //places poweup below player
         powerupIndicator.transform.position = transform.position + new Vector3(0, -0.5f, 0);
 
@@ -65,6 +76,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("InstaKill"))
         {
             hasInstaKill = true;
+           // Score += 1;
             Destroy(other.gameObject);
             StartCoroutine(IKCountdownRoutine());
         }
@@ -74,10 +86,21 @@ public class PlayerController : MonoBehaviour
             EntryWall.gameObject.SetActive(true);
         }
 
+         if (other.gameObject.CompareTag("Respawn"))
+        {
+            Debug.Log("test");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        
+
     }
 
 
-    
+
+
+
+
 
     /// <summary>
     /// after powerup is picked up, wait (seconds) until it is turned off + turns off inddicator
@@ -116,10 +139,15 @@ public class PlayerController : MonoBehaviour
 
         else if (collision.gameObject.CompareTag("Enemy") && (hasInstaKill == true))
         {
-            Debug.Log("YOOOOOOO");
+            // Debug.Log("YOOOOOOO");
+            Score += 1;
             Destroy(collision.gameObject);
         }
+
+        
     }
 
- 
+
+
+
 }

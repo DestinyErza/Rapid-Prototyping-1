@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : GameBehaviour
 {
     public float speed;
     private Rigidbody enemyRb;
     private GameObject player;
     public Vector3 lookDirection;
 
+   // public int health;
+    public GameObject BWall;
+
+    public int damage;
 
     void Start()
     {
@@ -30,5 +34,19 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+     private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("BWall"))
+        {
+            Debug.Log("wall hit");
+            Damage();
+        }
+    }
+
+    void Damage()
+    {
+        _BW.ApplyDamage(damage);
     }
 }
