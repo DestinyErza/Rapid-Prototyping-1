@@ -9,8 +9,7 @@ public class Enemy : GameBehaviour
     private GameObject player;
     public Vector3 lookDirection;
 
-   // public int health;
-    public GameObject BWall;
+ 
 
     public int damage;
 
@@ -36,17 +35,17 @@ public class Enemy : GameBehaviour
         }
     }
 
-     private void OnCollisionEnter(Collision collision)
+   // public  void OnCollisionEnter(Collision collision)
+  //  {
+   //     collision.gameObject.GetComponent<BreakableWall>().ApplyDamage(1);
+  //  }
+
+    public void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("BWall"))
-        {
-            Debug.Log("wall hit");
-            Damage();
-        }
+   
+        collision.gameObject.GetComponent<BreakableWall>().ApplyDamage(1);
+
     }
 
-    void Damage()
-    {
-        _BW.ApplyDamage(damage);
-    }
+   
 }
