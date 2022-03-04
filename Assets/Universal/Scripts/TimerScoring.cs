@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimerScoring : GameBehaviour
+public class TimerScoring : Singleton<TimerScoring>
 {
   
         public float bestTime;
@@ -43,7 +43,7 @@ public class TimerScoring : GameBehaviour
                 PlayerPrefs.DeleteAll();
         }
 
-        void GameOver()
+       public void GameOver()
         {
             timer.StopTimer();
             currentTime = timer.GetTime();

@@ -98,6 +98,7 @@ public class PlayerController : Singleton<PlayerController>
          if (other.gameObject.CompareTag("Respawn"))
         {
             Debug.Log("test");
+            _TS.GameOver();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
@@ -119,6 +120,12 @@ public class PlayerController : Singleton<PlayerController>
             go.SetActive(false);
         }
 
+        if (other.gameObject.CompareTag("PWall4") & Score >= 20)
+        {
+            GameObject go = GameObject.FindGameObjectWithTag("PWall4");
+            go.SetActive(false);
+        }
+
         if (other.CompareTag("scoreUP"))
         {
             Score += 5;
@@ -127,6 +134,11 @@ public class PlayerController : Singleton<PlayerController>
             StartCoroutine(CountdownRoutine());
         }
 
+        if (other.gameObject.CompareTag("WIN ZONE") & Score >= 20)
+        {
+            _OI.ToggleWin();
+            _TS.GameOver();
+        }
     }
 
 

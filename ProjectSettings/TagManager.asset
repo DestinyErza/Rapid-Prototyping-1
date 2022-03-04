@@ -16,6 +16,7 @@ TagManager:
   - PWall3
   - PWall4
   - scoreUP
+  - WIN ZONE
   layers:
   - Default
   - TransparentFX
