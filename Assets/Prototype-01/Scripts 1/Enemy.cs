@@ -35,17 +35,12 @@ public class Enemy : GameBehaviour
         }
     }
 
-   // public  void OnCollisionEnter(Collision collision)
-  //  {
-   //     collision.gameObject.GetComponent<BreakableWall>().ApplyDamage(1);
-  //  }
-
-    public void OnCollisionStay(Collision collision)
+    public  void OnCollisionEnter(Collision collision)
     {
-   
         collision.gameObject.GetComponent<BreakableWall>().ApplyDamage(1);
-
     }
+
+ 
 
    
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BreakableWall : MonoBehaviour
 {
-    public int health = 2;
+    public int health = 10;
     public GameObject Wall;
 
     void Start()

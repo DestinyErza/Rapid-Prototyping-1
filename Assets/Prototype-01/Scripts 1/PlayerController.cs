@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
     private Rigidbody playerRb;
     private SpawnManager SM;
@@ -14,8 +14,12 @@ public class PlayerController : MonoBehaviour
     public GameObject EntryWall;
     public GameObject resetPoint;
 
+
+    public TMP_Text IKtext;
+    public TMP_Text PUtext;
     public int Score;
     public TMP_Text scoreText;
+    public TMP_Text scoreUp;
 
     public float speed = 2.0f;
     public float powerupStrength = 15.0f;
@@ -31,8 +35,8 @@ public class PlayerController : MonoBehaviour
         SM = GetComponent<SpawnManager>();
         playerRb = GetComponent<Rigidbody>();
         resetPoint = GameObject.Find("Reset_Point");
+        Cursor.lockState = CursorLockMode.Locked;
 
-        
     }
    
 
@@ -48,6 +52,8 @@ public class PlayerController : MonoBehaviour
        
         //places poweup below player
         powerupIndicator.transform.position = transform.position + new Vector3(0, -0.5f, 0);
+
+        
 
         if (hasInstaKill == true)
         {
@@ -68,6 +74,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Powerup"))
         {
             hasPowerup = true;
+            IKtext.text = "Mechanics is active, send 'em flying!!";
             powerupIndicator.gameObject.SetActive(true);
             Destroy(other.gameObject);
             StartCoroutine(PowerupCountdownRoutine());
@@ -76,6 +83,8 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("InstaKill"))
         {
             hasInstaKill = true;
+            powerupIndicator.gameObject.SetActive(true);
+            IKtext.text = "Instakill is active, attack those enemies with full force!";
            // Score += 1;
             Destroy(other.gameObject);
             StartCoroutine(IKCountdownRoutine());
@@ -92,7 +101,31 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
-        
+        if (other.gameObject.CompareTag("PWall") & Score >= 5)
+        {
+            GameObject go = GameObject.FindGameObjectWithTag("PWall");
+            go.SetActive(false);
+        }
+
+        if (other.gameObject.CompareTag("PWall2") & Score >= 10)
+        {
+            GameObject go = GameObject.FindGameObjectWithTag("PWall2");
+            go.SetActive(false);
+        }
+
+        if (other.gameObject.CompareTag("PWall3") & Score >= 15)
+        {
+            GameObject go = GameObject.FindGameObjectWithTag("PWall3");
+            go.SetActive(false);
+        }
+
+        if (other.CompareTag("scoreUP"))
+        {
+            Score += 5;
+            Destroy(other.gameObject);
+            scoreUp.text = "SCORE UP!";
+            StartCoroutine(CountdownRoutine());
+        }
 
     }
 
@@ -110,6 +143,7 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(7);
         hasPowerup = false;
+        IKtext.text = "";
         powerupIndicator.gameObject.SetActive(false);
     }
     //wallcountdown
@@ -119,8 +153,16 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(10);
         hasInstaKill = false;
+        IKtext.text = "";
+        powerupIndicator.gameObject.SetActive(false);
     }
 
+
+    IEnumerator CountdownRoutine()
+    {
+        yield return new WaitForSeconds(2);
+        scoreUp.text = "";
+    }
     /// <summary>
     /// when player collides with enemy + has powerup / powerup is applied
     /// </summary>

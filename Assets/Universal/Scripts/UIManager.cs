@@ -12,7 +12,25 @@ public class UIManager : Singleton<UIManager>
         public TMP_Text bestTimeText;
         public TMP_Text currentTimeText;
 
-        public void UpdateScore(int _score)
+    public TMP_Text IKtext;
+    public TMP_Text PUText;
+
+
+   public void update()
+    {
+        if (_PC.hasInstaKill == true)
+        {
+            IKtext.text = "Insta Kill is online, take out those enemies!";
+        }
+      
+        
+    }
+   // IEnumerator IKCount()
+   // {
+   //     yield return new WaitForSeconds(10);
+    //    IKtext.text = "";
+   // }
+    public void UpdateScore(int _score)
         {
            // scoreText.text = "Score: " + _score;
         }
