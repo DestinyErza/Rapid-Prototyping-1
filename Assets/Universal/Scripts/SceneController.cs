@@ -5,10 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
+    public void LoadScene(string _sceneName)
+    {
+        SceneManager.LoadScene(_sceneName);
+    }
 
     public void ChangeScene(string _sceneName)
     {
         SceneManager.LoadScene(_sceneName);
+    }
+
+    public string GetSceneName()
+    {
+        return SceneManager.GetActiveScene().name;
     }
 
     public void ReloadScene()
@@ -21,10 +30,7 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("Main_Menu");
     }
 
-    public string GetSceneName()
-    {
-        return SceneManager.GetActiveScene().name;
-    }
+ 
 
     public void QuitGame()
     {
