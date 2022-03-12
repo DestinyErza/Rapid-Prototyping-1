@@ -18,11 +18,15 @@ public class DialogueSystem : MonoBehaviour
     public void Start()
     {
         isWaitingForInput = false;
-      //  speechPanel.SetActive(false);
+        speechPanel.SetActive(false);
     }
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            speechPanel.SetActive(false);
 
+        }
     }
     
 

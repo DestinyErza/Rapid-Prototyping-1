@@ -17,6 +17,8 @@ TagManager:
   - PWall4
   - scoreUP
   - WIN ZONE
+  - CharA
+  - CharB
   layers:
   - Default
   - TransparentFX
