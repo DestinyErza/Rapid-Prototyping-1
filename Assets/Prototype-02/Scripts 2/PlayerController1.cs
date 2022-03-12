@@ -22,7 +22,7 @@ public class PlayerController1 : Singleton<PlayerController>
         Cursor.lockState = CursorLockMode.Locked;
         InitiateDialogue.text = "";
         Time.timeScale = 1;
-        
+        InitiatePanel.SetActive(false);
     }
    
 
@@ -42,14 +42,14 @@ public class PlayerController1 : Singleton<PlayerController>
         if (other.CompareTag("CharA"))
         {
             InitiatePanel.SetActive(true);
-            InitiateDialogue.text = "press space!";
+            InitiateDialogue.text = "press z!";
          
         }
 
         if (other.CompareTag("CharB"))
         {
             InitiatePanel.SetActive(true);
-            InitiateDialogue.text = "press W!";
+            InitiateDialogue.text = "press X!";
 
         }
 

@@ -24,13 +24,15 @@ public class Score : MonoBehaviour
 
     public void AddScore()
     {
-        score += 5;
+        score += 1;
         ButtonPanel.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void MinusScore()
     {
-        score -= 5;
+        score -= 1;
         ButtonPanel.SetActive(false);
+        Time.timeScale = 1;
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharA : MonoBehaviour
+public class CharB : MonoBehaviour
 {
     DialogueSystem dialogue;
     // Start is called before the first frame update
@@ -13,18 +13,18 @@ public class CharA : MonoBehaviour
 
     public string[] s = new string[]
     {
-        "PLACEHOLDER :Marnie",
+        "PLACEHOLDER :Altea",
         "PLACEHOLDER",
         "PLACEHOLDER",
         "PLACEHOLDER: PLAYER",
-        "press 1 to initiate options"
+        "press 2 to initiate options"
     };
 
     int index = 0;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             if (!dialogue.isSpeaking || dialogue.isWaitingForInput)
             {
@@ -48,4 +48,3 @@ public class CharA : MonoBehaviour
         dialogue.say(speech, speaker);
     }
 }
-
