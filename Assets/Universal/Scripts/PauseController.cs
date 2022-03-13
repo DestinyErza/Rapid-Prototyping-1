@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PauseController : MonoBehaviour
 {
-
     public GameObject pausePanel;
     public bool paused;
     void Start()
@@ -21,12 +20,10 @@ public class PauseController : MonoBehaviour
             Pause();
     }
 
-    public void Pause()
+     public void Pause()
     {
-        Cursor.lockState = CursorLockMode.None;
         paused = !paused;
         pausePanel.SetActive(paused);
         Time.timeScale = paused ? 0 : 1;
     }
-
 }
