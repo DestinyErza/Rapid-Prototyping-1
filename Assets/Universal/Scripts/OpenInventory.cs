@@ -22,7 +22,7 @@ public class OpenInventory : Singleton<OpenInventory>
     void Update()
     {
         //OPENS ON I
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             ToggleInventory();
         }

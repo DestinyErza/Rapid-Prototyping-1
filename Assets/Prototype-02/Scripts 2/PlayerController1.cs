@@ -4,14 +4,14 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 
-public class PlayerController1 : Singleton<PlayerController>
+public class PlayerController1 : Singleton<PlayerController1>
 {
     private Rigidbody playerRb;
     private SpawnManager SM;
 
     public TMP_Text InitiateDialogue;
     public GameObject InitiatePanel;
-   
+    public bool correctanswer;
 
 
 
@@ -53,6 +53,21 @@ public class PlayerController1 : Singleton<PlayerController>
 
         }
 
+        if (other.CompareTag("CharC"))
+        {
+            InitiatePanel.SetActive(true);
+            InitiateDialogue.text = "press c!";
+
+        }
+      
+
+       if (other.CompareTag("CharC") && (correctanswer = true))
+        {
+          InitiatePanel.SetActive(true);
+          InitiateDialogue.text = "press v!";
+
+        }
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -65,6 +80,14 @@ public class PlayerController1 : Singleton<PlayerController>
         }
 
         if (other.CompareTag("CharB"))
+        {
+            InitiatePanel.SetActive(false);
+            InitiateDialogue.text = "";
+
+        }
+
+
+        if (other.CompareTag("CharC"))
         {
             InitiatePanel.SetActive(false);
             InitiateDialogue.text = "";

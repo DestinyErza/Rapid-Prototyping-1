@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Score : MonoBehaviour
+public class Score : GameBehaviour
 {
     public int score;
     public TMP_Text scoreText;
@@ -34,5 +34,21 @@ public class Score : MonoBehaviour
         score -= 1;
         ButtonPanel.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    public void CharCbranchPOS()
+    {
+        score += 1;
+        ButtonPanel.SetActive(false);
+        Time.timeScale = 1;
+        _PC1.correctanswer = true;
+    }
+
+    public void CharCbranchNEG()
+    {
+        score -= 1;
+        ButtonPanel.SetActive(false);
+        Time.timeScale = 1;
+        _PC1.correctanswer = false;
     }
 }

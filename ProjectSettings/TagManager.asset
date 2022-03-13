@@ -19,6 +19,8 @@ TagManager:
   - WIN ZONE
   - CharA
   - CharB
+  - CharC
+  - CharD
   layers:
   - Default
   - TransparentFX
@@ -26,7 +28,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - UI2
   - 
   - 
   - 

@@ -5,13 +5,17 @@ using UnityEngine;
 public class ChoicePause : MonoBehaviour
 {
     public GameObject buttonPanel;
+    public GameObject buttonPanel2;
+    public GameObject buttonPanel3;
     public GameObject speechPanel;
     public bool choice;
     void Start()
     {
         choice = false;
-        buttonPanel.SetActive(false);
         Time.timeScale = 1;
+        buttonPanel.SetActive(false);
+        buttonPanel.SetActive(false);
+        buttonPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -21,10 +25,10 @@ public class ChoicePause : MonoBehaviour
             Pause();
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            Pause();
+            Pause2();
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
-            Pause();
+            Pause3();
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
             Pause();
@@ -39,6 +43,25 @@ public class ChoicePause : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         choice = !choice;
         buttonPanel.SetActive(choice);
+        Time.timeScale = choice ? 0 : 1;
+    }
+
+    public void Pause2()
+    {
+        speechPanel.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        choice = !choice;
+        buttonPanel2.SetActive(choice);
+        Time.timeScale = choice ? 0 : 1;
+    }
+
+
+    public void Pause3()
+    {
+        speechPanel.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        choice = !choice;
+        buttonPanel3.SetActive(choice);
         Time.timeScale = choice ? 0 : 1;
     }
 }
