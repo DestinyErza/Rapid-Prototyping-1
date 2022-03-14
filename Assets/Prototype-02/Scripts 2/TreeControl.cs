@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeControl : PlayerController1
+public class TreeControl : GameBehaviour
 {
     public GameObject basic;
     public GameObject positive1;
@@ -18,12 +18,12 @@ public class TreeControl : PlayerController1
     // Update is called once per frame
     void Update()
     {
-        if (score >= 1)
+        if (_PC1.score >= 1)
         {
             basic.SetActive(true);
         }
 
-        if (score <= 1)
+        if (_PC1.score <= 1)
         {
            basic.SetActive(false);
         }
