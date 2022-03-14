@@ -11,4 +11,5 @@ public class GameBehaviour : MonoBehaviour
     protected static PlayerController1 _PC1 { get { return PlayerController1.instance; } }
     protected static OpenInventory _OI { get { return OpenInventory.instance; } }
     protected static TimerScoring _TS { get { return TimerScoring.instance; } }
+   // protected static Score _S { get { return Score.instance; } }
 }

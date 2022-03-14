@@ -18,23 +18,28 @@ public class DialogueSystem : MonoBehaviour
     public void Start()
     {
         isWaitingForInput = false;
-        speechPanel.SetActive(false);
+        TogglePanel(false);
     }
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            speechPanel.SetActive(false);
-
-        }
+      //  if (Input.GetKeyDown(KeyCode.F))
+       // {
+        //    speechPanel.SetActive(false);
+////
+       // }
     }
     
+    public void TogglePanel(bool ison)
+    {
+        speechPanel.SetActive(ison);
+    }
 
     /// <summary>
     /// shows speech in dialogue box
     /// </summary>
     public void say(string speech, string name = "")
     {
+        PlayerController1.instance.playerState = PlayerState.Interacting;
         StopSpeaking();
         speaking = StartCoroutine(Speaking(speech, name ));
     }
@@ -46,6 +51,7 @@ public class DialogueSystem : MonoBehaviour
             StopCoroutine(speaking);
         }
         speaking = null;
+
     }
 
     [HideInInspector] public bool isWaitingForInput = false;

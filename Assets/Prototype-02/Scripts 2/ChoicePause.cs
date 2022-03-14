@@ -13,6 +13,7 @@ public class ChoicePause : MonoBehaviour
     {
         choice = false;
         Time.timeScale = 1;
+        Cursor.visible = false;
         buttonPanel.SetActive(false);
         buttonPanel.SetActive(false);
         buttonPanel.SetActive(false);
@@ -23,6 +24,7 @@ public class ChoicePause : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
             Pause();
+        else Cursor.visible = false;
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
             Pause2();
@@ -40,7 +42,7 @@ public class ChoicePause : MonoBehaviour
     public void Pause()
     {
         speechPanel.SetActive(false);
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         choice = !choice;
         buttonPanel.SetActive(choice);
         Time.timeScale = choice ? 0 : 1;

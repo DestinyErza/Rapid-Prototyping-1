@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeControl : Score
+public class TreeControl : PlayerController1
 {
     public GameObject basic;
     public GameObject positive1;

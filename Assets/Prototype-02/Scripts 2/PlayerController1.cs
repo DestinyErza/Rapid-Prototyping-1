@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
+using UnityStandardAssets.Characters.FirstPerson;
 
+public enum PlayerState { Exploring, Interacting}
 public class PlayerController1 : Singleton<PlayerController1>
 {
     private Rigidbody playerRb;
@@ -12,97 +14,76 @@ public class PlayerController1 : Singleton<PlayerController1>
     public TMP_Text InitiateDialogue;
     public GameObject InitiatePanel;
     public bool correctanswer;
+    public PlayerState playerState;
 
+    public int score;
+    public TMP_Text scoreText;
 
+    RigidbodyFirstPersonController fpc;
+   
 
 
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
-        Cursor.lockState = CursorLockMode.Locked;
         InitiateDialogue.text = "";
         Time.timeScale = 1;
         InitiatePanel.SetActive(false);
+        fpc = GetComponent<RigidbodyFirstPersonController>();
+       
     }
    
 
     void Update()
     {
-      
+        scoreText.text = "score: " + score;
+
+        if (playerState == PlayerState.Interacting)
+        {
+            fpc.enabled = false;
+        }
+        else
+        {
+            fpc.enabled = true;
+        }
+
+        ///choices
+        ///
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            AddScore();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            MinusScore();
+        }
     }
 
-   
-    /// <summary>
-    /// promptss player interaction
-    /// </summary>
-    /// <param name="other"></param>
-    private void OnTriggerEnter(Collider other)
+    public void AddScore()
     {
-
-        if (other.CompareTag("CharA"))
-        {
-            InitiatePanel.SetActive(true);
-            InitiateDialogue.text = "press z!";
-         
-        }
-
-        if (other.CompareTag("CharB"))
-        {
-            InitiatePanel.SetActive(true);
-            InitiateDialogue.text = "press X!";
-
-        }
-
-        if (other.CompareTag("CharC"))
-        {
-            InitiatePanel.SetActive(true);
-            InitiateDialogue.text = "press c!";
-
-        }
-      
-
-       if (other.CompareTag("CharC") && (correctanswer = true))
-        {
-          InitiatePanel.SetActive(true);
-          InitiateDialogue.text = "press v!";
-
-        }
-
+        score += 1;
+        // ButtonPanel.SetActive(false);
+        Time.timeScale = 1;
     }
 
-    private void OnTriggerExit(Collider other)
+    public void MinusScore()
     {
-        if (other.CompareTag("CharA"))
-        {
-            InitiatePanel.SetActive(false);
-            InitiateDialogue.text = "";
-           
-        }
-
-        if (other.CompareTag("CharB"))
-        {
-            InitiatePanel.SetActive(false);
-            InitiateDialogue.text = "";
-
-        }
-
-
-        if (other.CompareTag("CharC"))
-        {
-            InitiatePanel.SetActive(false);
-            InitiateDialogue.text = "";
-
-        }
+        score -= 1;
+        Time.timeScale = 1;
     }
 
 
+     public void CharCbranchPOS()
+    {
+        score += 1;
+        Time.timeScale = 1;
+        correctanswer = true;
+    }
 
-
-
-
-
-
-
-
-
+    public void CharCbranchNEG()
+    {
+        score -= 1;
+        Time.timeScale = 1;
+        correctanswer = false;
+    }
 }
