@@ -351,7 +351,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &64032912 stripped
 Transform:
@@ -427,6 +427,136 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee4a7f34f5261724c901112cd4fb5846, type: 3}
+--- !u!1 &86510081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 86510087}
+  - component: {fileID: 86510086}
+  - component: {fileID: 86510085}
+  - component: {fileID: 86510084}
+  - component: {fileID: 86510083}
+  - component: {fileID: 86510082}
+  m_Layer: 0
+  m_Name: Capsule  (4)
+  m_TagString: CharB
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &86510082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86510081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804b58a77e5bc654f828c09a0a0fa87b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - PLACEHOLDER :Marnie
+  - PLACEHOLDER
+  - PLACEHOLDER
+  - 'PLACEHOLDER: PLAYER'
+  - press 1 to initiate options
+--- !u!65 &86510083
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86510081}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.3840485, y: 2, z: 6.900154}
+  m_Center: {x: -0.24157715, y: 0, z: 0.42453384}
+--- !u!136 &86510084
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86510081}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &86510085
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86510081}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &86510086
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86510081}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &86510087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86510081}
+  m_LocalRotation: {x: -0, y: -0.12109759, z: -0, w: 0.9926406}
+  m_LocalPosition: {x: 51.868492, y: 0.78, z: 80.45086}
+  m_LocalScale: {x: 0.7210786, y: 0.7210786, z: 0.7210786}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: -13.911, z: 0}
 --- !u!1 &91827421
 GameObject:
   m_ObjectHideFlags: 0
@@ -1184,7 +1314,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &306266039
 PrefabInstance:
@@ -1314,7 +1444,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1356953098430389724, guid: 30de34a35a4305c4498f476c8678d541, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1356953098430389724, guid: 30de34a35a4305c4498f476c8678d541, type: 3}
       propertyPath: m_LocalScale.x
@@ -1489,7 +1619,7 @@ Transform:
   m_LocalScale: {x: 0.68715, y: 0.68715, z: 0.68715}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &333765172
 MonoBehaviour:
@@ -2314,110 +2444,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d76604d888e1f2e4a9ea00687d223934, type: 3}
---- !u!1 &455126615
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 455126617}
-  - component: {fileID: 455126618}
-  - component: {fileID: 455126619}
-  - component: {fileID: 455126616}
-  - component: {fileID: 455126620}
-  m_Layer: 0
-  m_Name: Dialogue Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &455126616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 455126615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bae725dc502dc542b83cb4ce7001cf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s:
-  - why could'nt you just leave me alone..... :????
-  - 'it was better that way..... '
---- !u!4 &455126617
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 455126615}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &455126618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 455126615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a36b2d32513aad74cad8850da2922ef9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue: {fileID: 0}
-  s:
-  - PLACEHOLDER :Marnie
-  - PLACEHOLDER
-  - PLACEHOLDER
-  - 'PLACEHOLDER: PLAYER'
-  - press 1 to initiate options
-  index: 0
---- !u!114 &455126619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 455126615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d2ada644e7c1864686d947c6c5a9170, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue: {fileID: 0}
-  s:
-  - PLACEHOLDER :Altea
-  - PLACEHOLDER
-  - PLACEHOLDER
-  - 'PLACEHOLDER: PLAYER'
-  - press 2 to initiate options
-  index: 0
---- !u!114 &455126620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 455126615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fc38591f3603404684a417eb0d11663, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  s:
-  - leave me alone. :????
-  - 'leave. '
 --- !u!4 &463475243 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5621707245933178988, guid: f397ff5fa4702af4eb0ee7721adacc54, type: 3}
@@ -2656,7 +2682,7 @@ RectTransform:
   - {fileID: 1875922415}
   - {fileID: 1416577327}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3109,7 +3135,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!4 &539554820 stripped
 Transform:
@@ -3404,6 +3430,155 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9c7a0fb35d0caf4ca51e7ca6fc9a87a, type: 3}
+--- !u!1 &694328774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 694328780}
+  - component: {fileID: 694328779}
+  - component: {fileID: 694328778}
+  - component: {fileID: 694328777}
+  - component: {fileID: 694328776}
+  - component: {fileID: 694328775}
+  m_Layer: 0
+  m_Name: Leo
+  m_TagString: CharB
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &694328775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694328774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804b58a77e5bc654f828c09a0a0fa87b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+--- !u!65 &694328776
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694328774}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.3840485, y: 2, z: 6.900154}
+  m_Center: {x: -0.24157715, y: 0, z: 0.42453384}
+--- !u!136 &694328777
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694328774}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &694328778
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694328774}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &694328779
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694328774}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &694328780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694328774}
+  m_LocalRotation: {x: -0, y: -0.1649056, z: -0, w: 0.98630935}
+  m_LocalPosition: {x: 61.59209, y: 0.78, z: 53.923306}
+  m_LocalScale: {x: 0.7210786, y: 0.7210786, z: 0.7210786}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: -18.984, z: 0}
 --- !u!1001 &721253205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3417,7 +3592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3701,7 +3876,7 @@ Transform:
   - {fileID: 1447994681}
   - {fileID: 2115474522}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &775963178
 PrefabInstance:
@@ -4557,7 +4732,7 @@ Transform:
   m_Children:
   - {fileID: 2135846232}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1065733432
 PrefabInstance:
@@ -4841,7 +5016,7 @@ GameObject:
   - component: {fileID: 1178685085}
   - component: {fileID: 1178685084}
   m_Layer: 5
-  m_Name: press f to exit
+  m_Name: f
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5117,7 +5292,7 @@ GameObject:
   - component: {fileID: 1199376125}
   - component: {fileID: 1199376130}
   m_Layer: 0
-  m_Name: Capsule  (3)
+  m_Name: Marin
   m_TagString: CharC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5212,7 +5387,7 @@ Transform:
   m_LocalScale: {x: 0.68715, y: 0.68715, z: 0.68715}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 105.316, z: 0}
 --- !u!114 &1199376130
 MonoBehaviour:
@@ -5227,11 +5402,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - PLACEHOLDER :Marnie
-  - PLACEHOLDER
-  - PLACEHOLDER
-  - 'PLACEHOLDER: PLAYER'
-  - press 1 to initiate options
+  - leave me alone. :????
+  - 'leave. '
+  - "p\u0336\u0360\u030D\u0344\u0351\u0303\u0313\u0310\u030D\u035B\u030C\u0312\u030F\u031B\u0351\u0325\u035A\u032B\u0333\u0331\u035C\u0359\u0356\u0323\u0355\u0325\u0345\u0324\u031C\u0328\u033B\u0322\u0356\u031E\u032F\u0319\u032B\u032E\u033C\u0319\u0331\u0321\u0349\u0322\u034D\u033A\u031F\u033C\u0356\u0331\u0345\u0317\u032D\u0329\u0356\u0354\u0319\u034D\u0323l\u0336\u0351\u0307\u030F\u0315\u0305\u034B\u030A\u0346\u0305\u0307\u0351\u0309\u0341\u0341\u0357\u0308\u0301\u0304\u030C\u031Fa\u0335\u0310\u034A\u033D\u030F\u034A\u0301\u0314\u0347\u032D\u0322\u0354\u0326\u034E\u0327\u032D\u031F\u0321\u031D\u0322\u0348\u0333\u035A\u0347\u0354\u0326\u0332y\u0336\u0357\u0350\u0357\u0315\u0344\u0302\u030E\u0357\u0301\u0315\u0307\u030A\u0351\u0306\u0357\u030F\u0314\u0358\u0344\u034A\u034B\u0344\u0351\u0358\u033F\u0357\u0304\u035B\u0352\u0315\u030B\u0311\u0308\u0309\u035D\u0302\u0340\u034B\u032D\u0324\u032E\u0326\u0319\u032C\u0331\u0339\u0349\u0316\u0317\u0359\u0349\u0332\u0320\u0329\u0356\u0333\u033B\u0339\u031D\u0355\u032E\u0329\u0324\u031E\u0320\u0325e\u0337\u0346\u035B\u0343\u034C\u0344\u0324\u0326\u0318\u0322\u0348\u031F\u0332\u032F\u0320\u0345\u0317\u033C\u0318\u0330\u0330\u032B\u032A\u032F\u033A\u0356\u0349\u0356\u0356r\u0336\u0352\u0357\u0305\u030E\u0312\u035B\u0341\u0304\u0304\u035B\u0302\u0302\u0309\u0307\u0350\u0313\u0305\u0342\u0300\u0313\u0303\u0343\u030D\u0342\u031A\u0346\u0310\u0344\u030F\u0346\u035B\u0314\u0343\u035B\u0306\u0360\u0303\u0341\u030F\u0342\u033E\u0311\u0341\u033D\u0307\u0301\u0328\u0328\u0345\u0354\u032A\u0319\u0347\u0329\u0327\u031F\u0354\u0317\u032F\u032C\u0321\u035C\u0354\u0345."
+  - leave.
+  - you really were stubborn. I'm... glad you still are but- you really have to leave.
+  - 'Marin:    '
+  - 'Marin?? : PLAYER'
+  - 'How- Did someone interfere with the process?: Marin??'
+  - 'You''re Marin?: PLAYER'
+  - "Yes- I'm Marin. And your p\u0336\u0360\u030D\u0344\u0351\u0303\u0313\u0310\u030D\u035B\u030C\u0312\u030F\u031B\u0351\u0325\u035A\u032B\u0333\u0331\u035C\u0359\u0356\u0323\u0355\u0325\u0345\u0324\u031C\u0328\u033B\u0322\u0356\u031E\u032F\u0319\u032B\u032E\u033C\u0319\u0331\u0321\u0349\u0322\u034D\u033A\u031F\u033C\u0356\u0331\u0345\u0317\u032D\u0329\u0356\u0354\u0319\u034D\u0323l\u0336\u0351\u0307\u030F\u0315\u0305\u034B\u030A\u0346\u0305\u0307\u0351\u0309\u0341\u0341\u0357\u0308\u0301\u0304\u030C\u031Fa\u0335\u0310\u034A\u033D\u030F\u034A\u0301\u0314\u0347\u032D\u0322\u0354\u0326\u034E\u0327\u032D\u031F\u0321\u031D\u0322\u0348\u0333\u035A\u0347\u0354\u0326\u0332y\u0336\u0357\u0350\u0357\u0315\u0344\u0302\u030E\u0357\u0301\u0315\u0307\u030A\u0351\u0306\u0357\u030F\u0314\u0358\u0344\u034A\u034B\u0344\u0351\u0358\u033F\u0357\u0304\u035B\u0352\u0315\u030B\u0311\u0308\u0309\u035D\u0302\u0340\u034B\u032D\u0324\u032E\u0326\u0319\u032C\u0331\u0339\u0349\u0316\u0317\u0359\u0349\u0332\u0320\u0329\u0356\u0333\u033B\u0339\u031D\u0355\u032E\u0329\u0324\u031E\u0320\u0325e\u0337\u0346\u035B\u0343\u034C\u0344\u0324\u0326\u0318\u0322\u0348\u031F\u0332\u032F\u0320\u0345\u0317\u033C\u0318\u0330\u0330\u032B\u032A\u032F\u033A\u0356\u0349\u0356\u0356r\u0336\u0352\u0357\u0305\u030E\u0312\u035B\u0341\u0304\u0304\u035B\u0302\u0302\u0309\u0307\u0350\u0313\u0305\u0342\u0300\u0313\u0303\u0343\u030D\u0342\u031A\u0346\u0310\u0344\u030F\u0346\u035B\u0314\u0343\u035B\u0306\u0360\u0303\u0341\u030F\u0342\u033E\u0311\u0341\u033D\u0307\u0301\u0328\u0328\u0345\u0354\u032A\u0319\u0347\u0329\u0327\u031F\u0354\u0317\u032F\u032C\u0321\u035C\u0354\u0345:
+    Marin"
+  - now leave.
+  - 'Press 1 to stay ||| Press 2 to leave:    '
+  - '.........: Marin'
+  - remember.
 --- !u!1001 &1213275237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5929,7 +6114,7 @@ Transform:
   - {fileID: 113419322}
   - {fileID: 508956528}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1446433955
 GameObject:
@@ -6309,7 +6494,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1499928758 stripped
 Transform:
@@ -6760,7 +6945,7 @@ Transform:
   - {fileID: 1660904612}
   - {fileID: 26531100}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1579655711
 GameObject:
@@ -7566,7 +7751,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1757934682
 MonoBehaviour:
@@ -8809,7 +8994,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2008780536 stripped
 Transform:
@@ -8831,7 +9016,7 @@ GameObject:
   - component: {fileID: 2011805159}
   - component: {fileID: 2011805160}
   m_Layer: 0
-  m_Name: 'Capsule '
+  m_Name: Avery
   m_TagString: CharB
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8913,7 +9098,7 @@ Transform:
   m_LocalScale: {x: 0.7210786, y: 0.7210786, z: 0.7210786}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2011805159
 BoxCollider:
@@ -8941,11 +9126,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - PLACEHOLDER :Marnie
-  - PLACEHOLDER
-  - PLACEHOLDER
-  - 'PLACEHOLDER: PLAYER'
-  - press 1 to initiate options
+  - 'ahhh-: Avery'
+  - hmmmnnnnnggg
+  - just a little- further- AH
+  - 'aAAAAAAAAA '
+  - '*a loud thud rings out*:     '
+  - "p\u0338\u035D\u0344\u030B\u030C\u0351\u0352\u030E\u0315\u030F\u0304\u0309\u032E\u0327l\u0338\u035D\u0306\u0352\u030A\u033E\u030E\u034B\u0350\u035D\u0344\u033D\u035D\u034C\u0315\u0333\u0345\u0321\u0327\u0325\u0325\u0353a\u0336\u0305\u0351\u0309\u0342\u030E\u031B\u030E\u0301\u030A\u0353\u0359y\u0335\u0358\u034D\u0319\u0359\u035C\u0356e\u0335\u0341\u034C\u0314\u035D\u0310\u0346\u0303\u0314\u033B\u0355\u0326\u0329\u0319\u0331\u0348\u0327\u0328\u034D\u032F\u0328r\u0335\u0341\u0309\u030C\u0304\u031B\u0303\u0306\u0332\u0356\u0331\u032F\u032D\u0330\u0323\u0354\u0327\u035C\u031D\u033C\u0326\u0330\u0320????:
+    Avery"
+  - is that really you?
+  - you look different...... your so tall- tall!
+  - 'different? tall? I''ve been like this for a while-: PLAYER'
+  - 'YOU are the perfect height! Can I get you to grab the other end-: Avery'
+  - '*she puts it in your hand*:    '
+  - 'Uh-: PLAYER'
+  - 'riiiight there, yes! perfect!: Avery'
+  - sunflowers were always your favourite flowers, I'm glad I got to choose these....
+  - "hey- p\u0338\u035D\u0344\u030B\u030C\u0351\u0352\u030E\u0315\u030F\u0304\u0309\u032E\u0327l\u0338\u035D\u0306\u0352\u030A\u033E\u030E\u034B\u0350\u035D\u0344\u033D\u035D\u034C\u0315\u0333\u0345\u0321\u0327\u0325\u0325\u0353a\u0336\u0305\u0351\u0309\u0342\u030E\u031B\u030E\u0301\u030A\u0353\u0359y\u0335\u0358\u034D\u0319\u0359\u035C\u0356e\u0335\u0341\u034C\u0314\u035D\u0310\u0346\u0303\u0314\u033B\u0355\u0326\u0329\u0319\u0331\u0348\u0327\u0328\u034D\u032F\u0328r\u0335\u0341\u0309\u030C\u0304\u031B\u0303\u0306\u0332\u0356\u0331\u032F\u032D\u0330\u0323\u0354\u0327\u035C\u031D\u033C\u0326\u0330\u0320??"
+  - 'uhm.... yes?: PLAYER'
+  - you remember me....right?:Avery
+  - you know my name?
+  - 'Press 1 to tell her that you do ||| Press 2 to tell her that you have no idea:       '
+  - .......:Avery
+  - "p\u0338\u035D\u0344\u030B\u030C\u0351\u0352\u030E\u0315\u030F\u0304\u0309\u032E\u0327l\u0338\u035D\u0306\u0352\u030A\u033E\u030E\u034B\u0350\u035D\u0344\u033D\u035D\u034C\u0315\u0333\u0345\u0321\u0327\u0325\u0325\u0353a\u0336\u0305\u0351\u0309\u0342\u030E\u031B\u030E\u0301\u030A\u0353\u0359y\u0335\u0358\u034D\u0319\u0359\u035C\u0356e\u0335\u0341\u034C\u0314\u035D\u0310\u0346\u0303\u0314\u033B\u0355\u0326\u0329\u0319\u0331\u0348\u0327\u0328\u034D\u032F\u0328r\u0335\u0341\u0309\u030C\u0304\u031B\u0303\u0306\u0332\u0356\u0331\u032F\u032D\u0330\u0323\u0354\u0327\u035C\u031D\u033C\u0326\u0330\u0320"
+  - " p\u0338\u035D\u0344\u030B\u030C\u0351\u0352\u030E\u0315\u030F\u0304\u0309\u032E\u0327l\u0338\u035D\u0306\u0352\u030A\u033E\u030E\u034B\u0350\u035D\u0344\u033D\u035D\u034C\u0315\u0333\u0345\u0321\u0327\u0325\u0325\u0353a\u0336\u0305\u0351\u0309\u0342\u030E\u031B\u030E\u0301\u030A\u0353\u0359y\u0335\u0358\u034D\u0319\u0359\u035C\u0356e\u0335\u0341\u034C\u0314\u035D\u0310\u0346\u0303\u0314\u033B\u0355\u0326\u0329\u0319\u0331\u0348\u0327\u0328\u034D\u032F\u0328r\u0335\u0341\u0309\u030C\u0304\u031B\u0303\u0306\u0332\u0356\u0331\u032F\u032D\u0330\u0323\u0354\u0327\u035C\u031D\u033C\u0326\u0330\u0320   
+    p\u0338\u035D\u0344\u030B\u030C\u0351\u0352\u030E\u0315\u030F\u0304\u0309\u032E\u0327l\u0338\u035D\u0306\u0352\u030A\u033E\u030E\u034B\u0350\u035D\u0344\u033D\u035D\u034C\u0315\u0333\u0345\u0321\u0327\u0325\u0325\u0353a\u0336\u0305\u0351\u0309\u0342\u030E\u031B\u030E\u0301\u030A\u0353\u0359y\u0335\u0358\u034D\u0319\u0359\u035C\u0356e\u0335\u0341\u034C\u0314\u035D\u0310\u0346\u0303\u0314\u033B\u0355\u0326\u0329\u0319\u0331\u0348\u0327\u0328\u034D\u032F\u0328r\u0335\u0341\u0309\u030C\u0304\u031B\u0303\u0306\u0332\u0356\u0331\u032F\u032D\u0330\u0323\u0354\u0327\u035C\u031D\u033C\u0326\u0330\u0320"
+  - I need you to remember.....
+  - 'that I was real. That we knew eachother. '
+  - "your the only one, that can, p\u0338\u035D\u0344\u030B\u030C\u0351\u0352\u030E\u0315\u030F\u0304\u0309\u032E\u0327l\u0338\u035D\u0306\u0352\u030A\u033E\u030E\u034B\u0350\u035D\u0344\u033D\u035D\u034C\u0315\u0333\u0345\u0321\u0327\u0325\u0325\u0353a\u0336\u0305\u0351\u0309\u0342\u030E\u031B\u030E\u0301\u030A\u0353\u0359y\u0335\u0358\u034D\u0319\u0359\u035C\u0356e\u0335\u0341\u034C\u0314\u035D\u0310\u0346\u0303\u0314\u033B\u0355\u0326\u0329\u0319\u0331\u0348\u0327\u0328\u034D\u032F\u0328r\u0335\u0341\u0309\u030C\u0304\u031B\u0303\u0306\u0332\u0356\u0331\u032F\u032D\u0330\u0323\u0354\u0327\u035C\u031D\u033C\u0326\u0330\u0320."
+  - '*she gives a warm smile and a tight hug to send you off*:      '
 --- !u!1 &2033247142
 GameObject:
   m_ObjectHideFlags: 0
@@ -9099,8 +9307,8 @@ GameObject:
   - component: {fileID: 2049185310}
   - component: {fileID: 2049185315}
   m_Layer: 0
-  m_Name: Capsule  (1)
-  m_TagString: CharA
+  m_Name: Mallory
+  m_TagString: character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9194,7 +9402,7 @@ Transform:
   m_LocalScale: {x: 0.68715, y: 0.68715, z: 0.68715}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2049185315
 MonoBehaviour:
@@ -9209,11 +9417,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - AAAAAAAAAAAAAA :Marnie
-  - PLACEHOLDER
-  - PLACEHOLDER
-  - 'PLACEHOLDER: PLAYER'
-  - press 1 to initiate options
+  - 'Welcome to the spring flower festivaL I''m your host Mallory-: Mallory'
+  - We are still setting up, are you here to help?
+  - 'I... don''t believe so: PLAYER'
+  - 'Ah is there any chance I could get your name?: Mallory'
+  - "Ah I'm p\u0338\u035D\u0344\u030B\u030C\u0351\u0352\u030E\u0315\u030F\u0304\u0309\u032E\u0327l\u0338\u035D\u0306\u0352\u030A\u033E\u030E\u034B\u0350\u035D\u0344\u033D\u035D\u034C\u0315\u0333\u0345\u0321\u0327\u0325\u0325\u0353a\u0336\u0305\u0351\u0309\u0342\u030E\u031B\u030E\u0301\u030A\u0353\u0359y\u0335\u0358\u034D\u0319\u0359\u035C\u0356e\u0335\u0341\u034C\u0314\u035D\u0310\u0346\u0303\u0314\u033B\u0355\u0326\u0329\u0319\u0331\u0348\u0327\u0328\u034D\u032F\u0328r\u0335\u0341\u0309\u030C\u0304\u031B\u0303\u0306\u0332\u0356\u0331\u032F\u032D\u0330\u0323\u0354\u0327\u035C\u031D\u033C\u0326\u0330\u0320:
+    PLAYER"
+  - "Ahhh p\u0338\u035D\u0344\u030B\u030C\u0351\u0352\u030E\u0315\u030F\u0304\u0309\u032E\u0327l\u0338\u035D\u0306\u0352\u030A\u033E\u030E\u034B\u0350\u035D\u0344\u033D\u035D\u034C\u0315\u0333\u0345\u0321\u0327\u0325\u0325\u0353a\u0336\u0305\u0351\u0309\u0342\u030E\u031B\u030E\u0301\u030A\u0353\u0359y\u0335\u0358\u034D\u0319\u0359\u035C\u0356e\u0335\u0341\u034C\u0314\u035D\u0310\u0346\u0303\u0314\u033B\u0355\u0326\u0329\u0319\u0331\u0348\u0327\u0328\u034D\u032F\u0328r\u0335\u0341\u0309\u030C\u0304\u031B\u0303\u0306\u0332\u0356\u0331\u032F\u032D\u0330\u0323\u0354\u0327\u035C\u031D\u033C\u0326\u0330\u0320-
+    wait p\u0338\u035D\u0344\u030B\u030C\u0351\u0352\u030E\u0315\u030F\u0304\u0309\u032E\u0327l\u0338\u035D\u0306\u0352\u030A\u033E\u030E\u034B\u0350\u035D\u0344\u033D\u035D\u034C\u0315\u0333\u0345\u0321\u0327\u0325\u0325\u0353a\u0336\u0305\u0351\u0309\u0342\u030E\u031B\u030E\u0301\u030A\u0353\u0359y\u0335\u0358\u034D\u0319\u0359\u035C\u0356e\u0335\u0341\u034C\u0314\u035D\u0310\u0346\u0303\u0314\u033B\u0355\u0326\u0329\u0319\u0331\u0348\u0327\u0328\u034D\u032F\u0328r\u0335\u0341\u0309\u030C\u0304\u031B\u0303\u0306\u0332\u0356\u0331\u032F\u032D\u0330\u0323\u0354\u0327\u035C\u031D\u033C\u0326\u0330\u0320.
+    Oh my gods your early: Mallory"
+  - I know your our guest of honour- but would ylou mind helping out?
+  - This tree beside me is your life tree, I can't really get it to bloom myself-
+    its up to you-
+  - 'What? what is a life tree?: PLAYER'
+  - 'Its the tree that shows the summary of your living life. The choices you make,
+    we all have one around here: Mallory'
+  - 'summary....?: PLAYER'
+  - Yes! If you wish to attend the flower festival you must first reach your trees
+    conclusion-:Mallory
+  - It's a bit intimidating- but all I'm asking you to do is interact with the people
+    at the festival. The results are in your hands
+  - "And I trust that you will build your own conclusion p\u0338\u035D\u0344\u030B\u030C\u0351\u0352\u030E\u0315\u030F\u0304\u0309\u032E\u0327l\u0338\u035D\u0306\u0352\u030A\u033E\u030E\u034B\u0350\u035D\u0344\u033D\u035D\u034C\u0315\u0333\u0345\u0321\u0327\u0325\u0325\u0353a\u0336\u0305\u0351\u0309\u0342\u030E\u031B\u030E\u0301\u030A\u0353\u0359y\u0335\u0358\u034D\u0319\u0359\u035C\u0356e\u0335\u0341\u034C\u0314\u035D\u0310\u0346\u0303\u0314\u033B\u0355\u0326\u0329\u0319\u0331\u0348\u0327\u0328\u034D\u032F\u0328r\u0335\u0341\u0309\u030C\u0304\u031B\u0303\u0306\u0332\u0356\u0331\u032F\u032D\u0330\u0323\u0354\u0327\u035C\u031D\u033C\u0326\u0330\u0320"
+  - 'press 1 if you wish to help ||| press 2 if you would rather not:     '
+  - 'The tree next to Mallory changed- maybe you never had a choice in this:        '
 --- !u!1 &2081756241
 GameObject:
   m_ObjectHideFlags: 0

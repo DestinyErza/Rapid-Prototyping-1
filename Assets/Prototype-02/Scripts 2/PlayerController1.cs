@@ -18,6 +18,7 @@ public class PlayerController1 : Singleton<PlayerController1>
 
     public int score;
     public TMP_Text scoreText;
+    
 
     RigidbodyFirstPersonController fpc;
    
@@ -56,6 +57,29 @@ public class PlayerController1 : Singleton<PlayerController1>
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             MinusScore();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            InitiatePanel.SetActive(false);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("character"))
+        {
+            InitiatePanel.SetActive(true);
+            InitiateDialogue.text = "Press Q to interact";
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("character"))
+        {
+            InitiatePanel.SetActive(false);
+            InitiateDialogue.text = "";
         }
     }
 

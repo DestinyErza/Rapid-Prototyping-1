@@ -20,7 +20,7 @@ TagManager:
   - CharA
   - CharB
   - CharC
-  - CharD
+  - character
   layers:
   - Default
   - TransparentFX

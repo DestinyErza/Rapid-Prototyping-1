@@ -29,7 +29,7 @@ public class Character : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             PlayerController1.instance.playerState = PlayerState.Interacting;
             dialogueSystem.TogglePanel(true);

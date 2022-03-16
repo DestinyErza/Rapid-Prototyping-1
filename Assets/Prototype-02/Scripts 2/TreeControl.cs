@@ -10,6 +10,12 @@ public class TreeControl : GameBehaviour
     public GameObject neative1;
     public GameObject negative2;
 
+
+
+
+    /// <summary>
+    /// /ADD ONE FOR EACH  + SCORE INSTEAD OF DRYING LMAO,, MAYA MODEL
+    /// </summary>
     void Start()
     {
         basic.SetActive(true);
