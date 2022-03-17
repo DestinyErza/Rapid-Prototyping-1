@@ -13,6 +13,7 @@ public class PlayerController1 : Singleton<PlayerController1>
 
     public TMP_Text InitiateDialogue;
     public GameObject InitiatePanel;
+    public GameObject WinPanel;
     public bool correctanswer;
     public PlayerState playerState;
 
@@ -28,6 +29,7 @@ public class PlayerController1 : Singleton<PlayerController1>
     {
         playerRb = GetComponent<Rigidbody>();
         InitiateDialogue.text = "";
+        WinPanel.SetActive(false);
         Time.timeScale = 1;
         InitiatePanel.SetActive(false);
         fpc = GetComponent<RigidbodyFirstPersonController>();
@@ -58,11 +60,22 @@ public class PlayerController1 : Singleton<PlayerController1>
         {
             MinusScore();
         }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Win();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            Continue();
+        }
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
             InitiatePanel.SetActive(false);
+            
         }
+
+     
     }
 
     private void OnTriggerEnter(Collider other)
@@ -72,6 +85,8 @@ public class PlayerController1 : Singleton<PlayerController1>
             InitiatePanel.SetActive(true);
             InitiateDialogue.text = "Press Q to interact";
         }
+
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -96,18 +111,22 @@ public class PlayerController1 : Singleton<PlayerController1>
         Time.timeScale = 1;
     }
 
-
-     public void CharCbranchPOS()
+    public void Continue()
     {
-        score += 1;
         Time.timeScale = 1;
-        correctanswer = true;
     }
 
-    public void CharCbranchNEG()
+    public void Win()
     {
-        score -= 1;
-        Time.timeScale = 1;
-        correctanswer = false;
+        WinPanel.SetActive(true);
+
+        if (score >= 5)
+        {
+            //win dialogue
+        }
+        else 
+        { 
+            //lose dialogue
+        }
     }
 }

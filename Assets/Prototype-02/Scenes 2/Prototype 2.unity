@@ -266,6 +266,138 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3483319651098082407, guid: f0badc85adb9b744ea1894728e94ef2f, type: 3}
   m_PrefabInstance: {fileID: 236689936}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &31048407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 31048413}
+  - component: {fileID: 31048412}
+  - component: {fileID: 31048411}
+  - component: {fileID: 31048410}
+  - component: {fileID: 31048409}
+  - component: {fileID: 31048408}
+  m_Layer: 0
+  m_Name: tree stand in
+  m_TagString: character
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &31048408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31048407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804b58a77e5bc654f828c09a0a0fa87b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Your tree may not be done, making this choice may end the game.
+  - Do you believe that your happy with the status of your tree?
+  - Have you talked to everyone?
+  - And formulated your own opinions on who you are?
+  - And why everyone here is here?
+  - If you believe you have, then trust yourself
+  - press 3 if you would like to end || press 4 if you would like to continue
+--- !u!65 &31048409
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31048407}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.3840485, y: 2, z: 6.900154}
+  m_Center: {x: -0.24157715, y: 0, z: 0.42453384}
+--- !u!136 &31048410
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31048407}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &31048411
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31048407}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &31048412
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31048407}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &31048413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31048407}
+  m_LocalRotation: {x: -0, y: -0.12109759, z: -0, w: 0.9926406}
+  m_LocalPosition: {x: 46.56, y: 0.78, z: 52.61}
+  m_LocalScale: {x: 0.7210786, y: 6.5486917, z: 0.7210786}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: -13.911, z: 0}
 --- !u!1001 &37747367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -442,8 +574,8 @@ GameObject:
   - component: {fileID: 86510083}
   - component: {fileID: 86510082}
   m_Layer: 0
-  m_Name: Capsule  (4)
-  m_TagString: CharB
+  m_Name: Resa
+  m_TagString: character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -461,11 +593,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - PLACEHOLDER :Marnie
-  - PLACEHOLDER
-  - PLACEHOLDER
-  - 'PLACEHOLDER: PLAYER'
-  - press 1 to initiate options
+  - "Ah! p\u0335\u0303\u030D\u0314\u033D\u0320\u0354\u035A\u033Bl\u0337\u0311\u0314\u031A\u0340\u0327a\u0335\u030E\u0342\u0341\u0306\u0340\u030A\u0342\u034Dy\u0335\u0343\u031D\u032C\u0325e\u0338\u035D\u030E\u0358\u0308\u0333\u0322\u0353\u032D\u0326\u0331\u0319r\u0334\u0352\u030E\u0314\u0341\u0312\u0342\u0352\u032E\u034E:
+    Resa"
+  - how lovely to see you here, as I'm sure you can see I am Resa.
+  - 'However in the eyes of heaven I hope that you call me the AOH '
+  - -uh uh- The angel of hell, no questions, there is not nearly enough time
+  - Aeri, sent me to give you a hint, and of course a question or two
+  - There are many pieces of your memory stored in the words of others
+  - You must piece them together, find the oddities and investigate them
+  - Everyone here, knows you, to some degree
+  - All you have to do is grasp the strings of your fate and remember
+  - your arrival to this place is key
+  - do you understand what I have said?
+  - Press 1 to admit that you don't yet || Press 2 to nod in agreement, and promise
+    that you do
+  - Good little one, now I'm a very busy person, so please do leave me be
+  - Aeri wishes you luck, a luck from the heavens
 --- !u!65 &86510083
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -551,11 +694,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86510081}
   m_LocalRotation: {x: -0, y: -0.12109759, z: -0, w: 0.9926406}
-  m_LocalPosition: {x: 51.868492, y: 0.78, z: 80.45086}
+  m_LocalPosition: {x: 91.93, y: 3.68, z: 23.33}
   m_LocalScale: {x: 0.7210786, y: 0.7210786, z: 0.7210786}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: -13.911, z: 0}
 --- !u!1 &91827421
 GameObject:
@@ -1314,7 +1457,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &306266039
 PrefabInstance:
@@ -1524,8 +1667,8 @@ GameObject:
   - component: {fileID: 333765167}
   - component: {fileID: 333765172}
   m_Layer: 0
-  m_Name: Capsule  (2)
-  m_TagString: CharA
+  m_Name: Luca(only unwritten script)
+  m_TagString: character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1619,7 +1762,7 @@ Transform:
   m_LocalScale: {x: 0.68715, y: 0.68715, z: 0.68715}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &333765172
 MonoBehaviour:
@@ -2681,6 +2824,7 @@ RectTransform:
   - {fileID: 1460313040}
   - {fileID: 1875922415}
   - {fileID: 1416577327}
+  - {fileID: 2012382946}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3446,7 +3590,7 @@ GameObject:
   - component: {fileID: 694328775}
   m_Layer: 0
   m_Name: Leo
-  m_TagString: CharB
+  m_TagString: character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3464,30 +3608,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - 'annnddd- there: ???'
+  - "ah, p\u0335\u0303\u030D\u0314\u033D\u0320\u0354\u035A\u033Bl\u0337\u0311\u0314\u031A\u0340\u0327a\u0335\u030E\u0342\u0341\u0306\u0340\u030A\u0342\u034Dy\u0335\u0343\u031D\u032C\u0325e\u0338\u035D\u030E\u0358\u0308\u0333\u0322\u0353\u032D\u0326\u0331\u0319r\u0334\u0352\u030E\u0314\u0341\u0312\u0342\u0352\u032E\u034E,
+    yes?"
+  - '*you nod*:     '
+  - 'Its lovely to meet you, I''m Leo: Leo'
+  - ah, your tree isnt complete yet I see
+  - 'How do you-: PLAYER'
+  - We all know, we've been through the same:Leo
+  - which means its time for your question yes?
+  - I'm sure you've been asked many since you got here
+  - hmmmm
+  - "p\u0335\u0303\u030D\u0314\u033D\u0320\u0354\u035A\u033Bl\u0337\u0311\u0314\u031A\u0340\u0327a\u0335\u030E\u0342\u0341\u0306\u0340\u030A\u0342\u034Dy\u0335\u0343\u031D\u032C\u0325e\u0338\u035D\u030E\u0358\u0308\u0333\u0322\u0353\u032D\u0326\u0331\u0319r\u0334\u0352\u030E\u0314\u0341\u0312\u0342\u0352\u032E\u034E"
+  - do you, believe that this place is real?
+  - do you know why the subway lead you here?
+  - press 1 to be honest, that you have no idea || press 2 to say that you do remember
+  - "I hope that your honesty is still with you p\u0335\u0303\u030D\u0314\u033D\u0320\u0354\u035A\u033Bl\u0337\u0311\u0314\u031A\u0340\u0327a\u0335\u030E\u0342\u0341\u0306\u0340\u030A\u0342\u034Dy\u0335\u0343\u031D\u032C\u0325e\u0338\u035D\u030E\u0358\u0308\u0333\u0322\u0353\u032D\u0326\u0331\u0319r\u0334\u0352\u030E\u0314\u0341\u0312\u0342\u0352\u032E\u034E"
+  - Joshua and I will be hoping for everything to return to you
+  - 'Joshua?: PLAYER'
+  - 'I see, you must have forgotten him then, it explains his absence...: Leo'
+  - when you meet the tree for the final time, promise me you'll remember him
+  - 'I can only try....: PLAYER'
 --- !u!65 &694328776
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4732,7 +4873,7 @@ Transform:
   m_Children:
   - {fileID: 2135846232}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1065733432
 PrefabInstance:
@@ -5021,7 +5162,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1178685083
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6114,7 +6255,7 @@ Transform:
   - {fileID: 113419322}
   - {fileID: 508956528}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1446433955
 GameObject:
@@ -6945,7 +7086,7 @@ Transform:
   - {fileID: 1660904612}
   - {fileID: 26531100}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1579655711
 GameObject:
@@ -7613,6 +7754,7 @@ MonoBehaviour:
   dontDestroy: 0
   InitiateDialogue: {fileID: 1827577954}
   InitiatePanel: {fileID: 1416577326}
+  WinPanel: {fileID: 2012382945}
   correctanswer: 0
   playerState: 0
   score: 0
@@ -8994,7 +9136,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2008780536 stripped
 Transform:
@@ -9154,6 +9296,81 @@ MonoBehaviour:
   - 'that I was real. That we knew eachother. '
   - "your the only one, that can, p\u0338\u035D\u0344\u030B\u030C\u0351\u0352\u030E\u0315\u030F\u0304\u0309\u032E\u0327l\u0338\u035D\u0306\u0352\u030A\u033E\u030E\u034B\u0350\u035D\u0344\u033D\u035D\u034C\u0315\u0333\u0345\u0321\u0327\u0325\u0325\u0353a\u0336\u0305\u0351\u0309\u0342\u030E\u031B\u030E\u0301\u030A\u0353\u0359y\u0335\u0358\u034D\u0319\u0359\u035C\u0356e\u0335\u0341\u034C\u0314\u035D\u0310\u0346\u0303\u0314\u033B\u0355\u0326\u0329\u0319\u0331\u0348\u0327\u0328\u034D\u032F\u0328r\u0335\u0341\u0309\u030C\u0304\u031B\u0303\u0306\u0332\u0356\u0331\u032F\u032D\u0330\u0323\u0354\u0327\u035C\u031D\u033C\u0326\u0330\u0320."
   - '*she gives a warm smile and a tight hug to send you off*:      '
+--- !u!1 &2012382945
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2012382946}
+  - component: {fileID: 2012382948}
+  - component: {fileID: 2012382947}
+  m_Layer: 5
+  m_Name: win
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2012382946
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012382945}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 503464896}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2012382947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012382945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2012382948
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012382945}
+  m_CullTransparentMesh: 1
 --- !u!1 &2033247142
 GameObject:
   m_ObjectHideFlags: 0
