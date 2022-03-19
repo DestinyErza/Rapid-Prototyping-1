@@ -8,6 +8,8 @@ public class PauseController : MonoBehaviour
     public bool paused;
     void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         paused = false;
         pausePanel.SetActive(false);
         Time.timeScale = 1;

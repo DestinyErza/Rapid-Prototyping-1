@@ -19,7 +19,8 @@ public class PlayerController1 : Singleton<PlayerController1>
 
     public int score;
     public TMP_Text scoreText;
-    
+    public TMP_Text winText;
+
 
     RigidbodyFirstPersonController fpc;
    
@@ -64,10 +65,7 @@ public class PlayerController1 : Singleton<PlayerController1>
         {
             Win();
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            Continue();
-        }
+    
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -118,15 +116,20 @@ public class PlayerController1 : Singleton<PlayerController1>
 
     public void Win()
     {
+
         WinPanel.SetActive(true);
 
-        if (score >= 5)
+        if (score >= 4)
         {
-            //win dialogue
+            winText.text = "congratulations player, you know the truth.You are dead. But do not worry, your joining the stars.<3";
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
         else 
-        { 
-            //lose dialogue
+        {
+            winText.text = "You failed, you made the wrong choices and left your chance to know the truth behind...";
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
