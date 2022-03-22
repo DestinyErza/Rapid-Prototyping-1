@@ -21,6 +21,8 @@ TagManager:
   - waterable
   - crop
   - chicken
+  - plot
+  - player
   layers:
   - Default
   - TransparentFX

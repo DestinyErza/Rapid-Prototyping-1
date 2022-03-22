@@ -12,6 +12,6 @@ public class GameBehaviour : MonoBehaviour
     protected static OpenInventory _OI { get { return OpenInventory.instance; } }
     protected static TimerScoring _TS { get { return TimerScoring.instance; } }
 
-    protected static PlotManager _PM { get { return PlotManager.instance; } }
+   // protected static PlotManager _PM { get { return PlotManager.instance; } }
     // protected static Score _S { get { return Score.instance; } }
 }

@@ -2,26 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Harvest : GameBehaviour
+public class Harvest : MonoBehaviour
 {
-    // Start is called before the first frame update
+  
+   
+
+    
+
+    public GameObject crop;
+    public GameObject watered;
     void Start()
     {
-        
+    
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("crop"))
+        if (other.CompareTag("player"))
         {
-            _PM.Harvest();
-
+          
+            watered.SetActive(false);
+            crop.SetActive(true);
+           
         }
     }
+ 
+
+    
 }
