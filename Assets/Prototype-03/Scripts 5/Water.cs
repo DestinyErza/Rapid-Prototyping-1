@@ -11,7 +11,7 @@ public class Water : MonoBehaviour
 
     private void Start()
     {
-   
+
         crop.SetActive(true);
         watered.SetActive(false);
     }
@@ -19,13 +19,24 @@ public class Water : MonoBehaviour
     {
         if (other.CompareTag("player"))
         {
-           water();
+            crop.SetActive(false);
+            watered.SetActive(true);
+
         }
     }
 
-    public void water()
+    public void OnTriggerExit(Collider other)
     {
-        crop.SetActive(false);
-        watered.SetActive(true);
+        
+
+        if (other.CompareTag("player"))
+        {
+           
+            watered.SetActive(true);
+
+
+        }
     }
 }
+
+   

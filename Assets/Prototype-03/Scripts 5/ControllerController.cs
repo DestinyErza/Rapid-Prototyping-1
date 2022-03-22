@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class ControllerController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float speed = 3.0f;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        //MOVEMENT FOR CONTROLLER, PUT ON CONTROLLER  NOT PLAYER
+        transform.Rotate(0.0f, +Input.GetAxis("Horizontal") * speed, 0.0f);
     }
 }
