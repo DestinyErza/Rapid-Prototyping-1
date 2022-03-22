@@ -12,15 +12,15 @@ TagManager:
   - EntryTrigger
   - BWall
   - PWall
-  - PWall2
   - PWall3
-  - PWall4
   - scoreUP
   - WIN ZONE
-  - CharA
-  - CharB
-  - CharC
   - character
+  - PWall4
+  - PWall2
+  - waterable
+  - crop
+  - chicken
   layers:
   - Default
   - TransparentFX
