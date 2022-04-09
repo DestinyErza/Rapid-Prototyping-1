@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class EquationGenerator : MonoBehaviour
+public class EquationGenerator : Singleton<EquationGenerator>
 {
     public enum Difficulty { EASY, MEDIUM, HARD }
 
@@ -13,15 +13,27 @@ public class EquationGenerator : MonoBehaviour
     public int numberTwo;
     public int correctAnswer;
 
+
+    public TMP_Text symbol;
     public TMP_Text numberone;
     public TMP_Text numbertwo;
-    public TMP_Text wronganswer;
-    public TMP_Text answer;
-    public TMP_Text symbol;
+
+    public TMP_Text answerA;
+    public TMP_Text answerD;
+    public TMP_Text answerM;
+    public TMP_Text AscoreText;
+    public TMP_Text DscoreText;
+    public TMP_Text MscoreText;
+
 
     public GameObject additionpanel;
     public GameObject divisionpanel;
     public GameObject multiplypanel;
+
+    public int Ascore;
+    public int Dscore;
+    public int Mscore;
+
 
     public bool activequestion = false;
 
@@ -31,11 +43,17 @@ public class EquationGenerator : MonoBehaviour
 
     private void Start()
     {
+        InvokeRepeating("EatFood", 2.0f, 3f);
 
         additionpanel.SetActive(false);
         multiplypanel.SetActive(false);
         divisionpanel.SetActive(false);
+
+        Ascore = 20;
+        Dscore = 0;
+        Mscore = 20;
     }
+   
 
     void Update()
     {
@@ -64,7 +82,9 @@ public class EquationGenerator : MonoBehaviour
             UpdateInterface();
         }
 
-
+        AscoreText.text = "score: " + Ascore;
+        DscoreText.text = "score: " + Dscore;
+        MscoreText.text = "score: " + Mscore;
         //  if (Input.GetKeyDown(KeyCode.R))
         //      GenerateRandomEquation();
         //  UpdateInterface();
@@ -192,7 +212,10 @@ public class EquationGenerator : MonoBehaviour
     {
         numberone.text = numberOne.ToString();
         numbertwo.text = numberTwo.ToString();
-        answer.text = correctAnswer.ToString();
+        answerD.text = correctAnswer.ToString();
+        answerM.text = correctAnswer.ToString();
+        answerA.text = correctAnswer.ToString();
+     //   answerPoints.text = ""+ correctAnswer;
         // AnswerLocation();
     }
 
@@ -208,14 +231,14 @@ public class EquationGenerator : MonoBehaviour
 
     public void Division()
     {
-
+        Dscore += 1;
         divisionpanel.SetActive(false);
         activequestion = false;
     }
 
     public void Multiply()
     {
-
+        Mscore += 1;
         multiplypanel.SetActive(false);
         activequestion = false;
     }
@@ -223,7 +246,32 @@ public class EquationGenerator : MonoBehaviour
     {
 
         additionpanel.SetActive(false);
+        Ascore += 1;
         activequestion = false;
 
+    }
+
+    public void FalseAnswer()
+    {
+        additionpanel.SetActive(false);
+        multiplypanel.SetActive(false);
+        divisionpanel.SetActive(false);
+        activequestion = false;
+    }
+
+    public void FalseAddition()
+    {
+        additionpanel.SetActive(false);
+        Ascore -= 1;
+        activequestion = false;
+    }
+
+    void EatFood()
+    {
+       Mscore -= 1;
+        if (Mscore <= 1) ;
+        {
+         //   Mscore -= 1;
+        }
     }
 }
