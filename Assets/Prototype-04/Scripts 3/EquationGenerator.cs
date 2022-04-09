@@ -19,15 +19,18 @@ public class EquationGenerator : MonoBehaviour
     public TMP_Text answer;
     public TMP_Text symbol;
 
+    public TMP_Text[] answerPoints;
+
     public List<int> dummyAnswers;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.M))
-        { 
+        {
             GenerateMultiplication();
-        symbol.text = "X";
-        UpdateInterface();
+            symbol.text = "X";
+            UpdateInterface();
+
         }
 
 
@@ -43,14 +46,14 @@ public class EquationGenerator : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             GenerateDivision();
-              symbol.text = "÷";
+            symbol.text = "÷";
             UpdateInterface();
         }
-       
 
-      //  if (Input.GetKeyDown(KeyCode.R))
-      //      GenerateRandomEquation();
-      //  UpdateInterface();
+
+        //  if (Input.GetKeyDown(KeyCode.R))
+        //      GenerateRandomEquation();
+        //  UpdateInterface();
     }
 
     void GenerateRandomEquation()
@@ -149,6 +152,16 @@ public class EquationGenerator : MonoBehaviour
     {
         numberone.text = numberOne.ToString();
         numbertwo.text = numberTwo.ToString();
-        answer.text = correctAnswer.ToString();
+        // answer.text = correctAnswer.ToString();
+        AnswerLocation();
+    }
+
+    void AnswerLocation()
+    {
+        //   int rndSpawn = Random.Range(0, answerPoints.Length);
+        TMP_Text randomLoca = answerPoints[Random.Range(0, answerPoints.Length)];
+        print(randomLoca);
+     //   answerPoints.text = dummyAnswers.ToString();
+        randomLoca.text = correctAnswer.ToString();
     }
 }
