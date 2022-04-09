@@ -19,9 +19,23 @@ public class EquationGenerator : MonoBehaviour
     public TMP_Text answer;
     public TMP_Text symbol;
 
+    public GameObject additionpanel;
+    public GameObject divisionpanel;
+    public GameObject multiplypanel;
+
+    public bool activequestion = false;
+
     public TMP_Text[] answerPoints;
 
     public List<int> dummyAnswers;
+
+    private void Start()
+    {
+
+        additionpanel.SetActive(false);
+        multiplypanel.SetActive(false);
+        divisionpanel.SetActive(false);
+    }
 
     void Update()
     {
@@ -69,29 +83,45 @@ public class EquationGenerator : MonoBehaviour
             GenerateDivision();
     }
 
-    void GenerateMultiplication()
+    public void GenerateMultiplication()
     {
-        numberOne = GetRandomNumbers();
-        numberTwo = GetRandomNumbers();
-        correctAnswer = numberOne * numberTwo;
+        if (activequestion == false)
+        {
+            numberOne = GetRandomNumbers();
+            numberTwo = GetRandomNumbers();
+            correctAnswer = numberOne * numberTwo;
 
-        Debug.Log(numberOne + " x " + numberTwo + " = " + correctAnswer);
+            Debug.Log(numberOne + " x " + numberTwo + " = " + correctAnswer);
 
-        GenerateDummyAnswers();
+            GenerateDummyAnswers();
+            symbol.text = "X";
+            UpdateInterface();
+
+            activequestion = true;
+            multiplypanel.SetActive(true);
+        }
+
     }
 
-    void GenerateAddition()
+    public void GenerateAddition()
     {
-        numberOne = GetRandomNumbers();
-        numberTwo = GetRandomNumbers();
-        correctAnswer = numberOne + numberTwo;
+        if (activequestion == false)
+        {
+            numberOne = GetRandomNumbers();
+            numberTwo = GetRandomNumbers();
+            correctAnswer = numberOne + numberTwo;
 
-        Debug.Log(numberOne + " + " + numberTwo + " = " + correctAnswer);
+            Debug.Log(numberOne + " + " + numberTwo + " = " + correctAnswer);
 
-        GenerateDummyAnswers();
+            GenerateDummyAnswers();
+            symbol.text = "+";
+            activequestion = true;
+            additionpanel.SetActive(true);
+            UpdateInterface();
+        }
     }
 
-    void GenerateSubtraction()
+    public void GenerateSubtraction()
     {
         numberOne = GetRandomNumbers();
         numberTwo = GetRandomNumbers();
@@ -100,16 +130,26 @@ public class EquationGenerator : MonoBehaviour
         Debug.Log(numberOne + " - " + numberTwo + " = " + correctAnswer);
 
         GenerateDummyAnswers();
+
     }
 
-    void GenerateDivision()
+    public void GenerateDivision()
     {
-        numberOne = GetRandomNumbers();
-        numberTwo = GetRandomNumbers();
-        correctAnswer = numberOne / numberTwo;
-        correctAnswer = Mathf.RoundToInt(correctAnswer);
-        Debug.Log(numberOne + " / " + numberTwo + " = " + correctAnswer);
-        GenerateDummyAnswers();
+        if (activequestion == false)
+        {
+            numberOne = GetRandomNumbers();
+            numberTwo = GetRandomNumbers();
+            correctAnswer = numberOne / numberTwo;
+            correctAnswer = Mathf.RoundToInt(correctAnswer);
+            Debug.Log(numberOne + " / " + numberTwo + " = " + correctAnswer);
+
+
+            GenerateDummyAnswers();
+            symbol.text = "÷";
+            activequestion = true;
+            divisionpanel.SetActive(true);
+            UpdateInterface();
+        }
     }
 
     /// <summary>
@@ -152,8 +192,8 @@ public class EquationGenerator : MonoBehaviour
     {
         numberone.text = numberOne.ToString();
         numbertwo.text = numberTwo.ToString();
-        // answer.text = correctAnswer.ToString();
-        AnswerLocation();
+        answer.text = correctAnswer.ToString();
+        // AnswerLocation();
     }
 
     void AnswerLocation()
@@ -161,7 +201,29 @@ public class EquationGenerator : MonoBehaviour
         //   int rndSpawn = Random.Range(0, answerPoints.Length);
         TMP_Text randomLoca = answerPoints[Random.Range(0, answerPoints.Length)];
         print(randomLoca);
-     //   answerPoints.text = dummyAnswers.ToString();
+        //   answerPoints.text = dummyAnswers.ToString();
         randomLoca.text = correctAnswer.ToString();
+    }
+
+
+    public void Division()
+    {
+
+        divisionpanel.SetActive(false);
+        activequestion = false;
+    }
+
+    public void Multiply()
+    {
+
+        multiplypanel.SetActive(false);
+        activequestion = false;
+    }
+    public void Addition()
+    {
+
+        additionpanel.SetActive(false);
+        activequestion = false;
+
     }
 }
