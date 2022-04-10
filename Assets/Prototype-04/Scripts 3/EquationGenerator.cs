@@ -9,9 +9,9 @@ public class EquationGenerator : Singleton<EquationGenerator>
 
     public Difficulty difficulty;
 
-    public int numberOne;
-    public int numberTwo;
-    public int correctAnswer;
+    public float numberOne;
+    public float numberTwo;
+    public float correctAnswer;
 
 
     public TMP_Text symbol;
@@ -24,6 +24,7 @@ public class EquationGenerator : Singleton<EquationGenerator>
     public TMP_Text AscoreText;
     public TMP_Text DscoreText;
     public TMP_Text MscoreText;
+    public TMP_Text scoretext;
 
 
     public GameObject additionpanel;
@@ -33,17 +34,19 @@ public class EquationGenerator : Singleton<EquationGenerator>
     public int Ascore;
     public int Dscore;
     public int Mscore;
+    public int score;
 
 
     public bool activequestion = false;
 
     public TMP_Text[] answerPoints;
 
-    public List<int> dummyAnswers;
+    public List<float> dummyAnswers;
 
     private void Start()
     {
         InvokeRepeating("EatFood", 2.0f, 3f);
+        InvokeRepeating("Attack", 10f, 7f);
 
         additionpanel.SetActive(false);
         multiplypanel.SetActive(false);
@@ -85,9 +88,21 @@ public class EquationGenerator : Singleton<EquationGenerator>
         AscoreText.text = "score: " + Ascore;
         DscoreText.text = "score: " + Dscore;
         MscoreText.text = "score: " + Mscore;
+        scoretext.text = "funds: " + score;
         //  if (Input.GetKeyDown(KeyCode.R))
         //      GenerateRandomEquation();
         //  UpdateInterface();
+
+        if (Ascore == 0)
+        {
+//loose
+        }
+
+        if (Ascore == 20)
+        {
+//win
+        }
+
     }
 
     void GenerateRandomEquation()
@@ -198,7 +213,7 @@ public class EquationGenerator : Singleton<EquationGenerator>
     {
         for (int i = 0; i < dummyAnswers.Count; i++)
         {
-            int dummy;
+            float dummy;
             do
             {
                 dummy = Random.Range(correctAnswer - 10, correctAnswer + 10);
@@ -215,8 +230,14 @@ public class EquationGenerator : Singleton<EquationGenerator>
         answerD.text = correctAnswer.ToString();
         answerM.text = correctAnswer.ToString();
         answerA.text = correctAnswer.ToString();
-     //   answerPoints.text = ""+ correctAnswer;
+
+    
+       // answerPoints.text = ""+ correctAnswer;
         // AnswerLocation();
+    }
+    public void UpdateTexts(string[] answerPoints)
+    {
+    //    this.answerPoints  = answerPoints;
     }
 
     void AnswerLocation()
@@ -232,6 +253,7 @@ public class EquationGenerator : Singleton<EquationGenerator>
     public void Division()
     {
         Dscore += 1;
+        score += 1;
         divisionpanel.SetActive(false);
         activequestion = false;
     }
@@ -240,6 +262,7 @@ public class EquationGenerator : Singleton<EquationGenerator>
     {
         Mscore += 1;
         multiplypanel.SetActive(false);
+        score += 1;
         activequestion = false;
     }
     public void Addition()
@@ -247,6 +270,7 @@ public class EquationGenerator : Singleton<EquationGenerator>
 
         additionpanel.SetActive(false);
         Ascore += 1;
+        score += 1;
         activequestion = false;
 
     }
@@ -262,16 +286,21 @@ public class EquationGenerator : Singleton<EquationGenerator>
     public void FalseAddition()
     {
         additionpanel.SetActive(false);
-        Ascore -= 1;
+       // Ascore -= 1;
         activequestion = false;
     }
 
     void EatFood()
     {
        Mscore -= 1;
-        if (Mscore <= 1) ;
+        if (Mscore <= 1) 
         {
          //   Mscore -= 1;
         }
+    }
+
+    void Attack()
+    {
+        Ascore -= 3;
     }
 }
