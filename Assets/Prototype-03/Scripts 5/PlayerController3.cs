@@ -29,6 +29,10 @@ public class PlayerController3 : Singleton<PlayerController3>
     public TMP_Text scoreText;
     public TMP_Text chickenText;
 
+    public GameObject indicator;
+    public GameObject winpanel;
+    public GameObject losepanel;
+
 
     public GameObject flower;
 
@@ -39,6 +43,17 @@ public class PlayerController3 : Singleton<PlayerController3>
     public GameObject flower3;
 
     public GameObject flower4;
+
+    public GameObject crates1;
+    public GameObject crates2;
+    public GameObject crates3;
+    public GameObject crates4;
+    public GameObject crates5;
+    public GameObject crates6;
+    public GameObject crates7;
+    public GameObject crates8;
+    public GameObject crates9;
+    public GameObject crates10;
 
 
     ///pivot controls!!!!!
@@ -59,12 +74,26 @@ public class PlayerController3 : Singleton<PlayerController3>
         friedchicken4.SetActive(false);
         heart5.SetActive(true);
 
+        indicator.SetActive(false);
+        winpanel.SetActive(false);
+        losepanel.SetActive(false);
+
 
         flower.SetActive(false);
         flower2.SetActive(false);
         flower3.SetActive(false);
         flower4.SetActive(false);
-   
+
+        crates1.SetActive(false);
+        crates2.SetActive(false);
+        crates3.SetActive(false);
+        crates4.SetActive(false);
+        crates5.SetActive(false);
+        crates6.SetActive(false);
+        crates7.SetActive(false);
+        crates8.SetActive(false);
+        crates9.SetActive(false);
+        crates10.SetActive(false);
         chickenscore = 0;
     }
 
@@ -97,9 +126,59 @@ public class PlayerController3 : Singleton<PlayerController3>
         if (score == 5)
         {
             flower1.SetActive(true);
-            //winnnnn
+            crates1.SetActive(true);
+          
+
         }
 
+        if (score >= 10)
+        {
+
+            crates2.SetActive(true);
+            
+        }
+        if (score >= 15)
+        {
+            crates3.SetActive(true);
+          
+
+        }
+        if (score >= 20)
+        {
+
+            crates4.SetActive(true);
+           
+        }
+        if (score >= 25)
+        {
+            crates5.SetActive(true);
+        }
+        if (score >= 30)
+        {
+
+            crates6.SetActive(true);
+        }
+        if (score >= 35)
+        {
+            crates7.SetActive(true);
+
+        }
+        if (score >= 40)
+        {
+            crates8.SetActive(true);
+
+        }
+        if (score >= 45)
+        {
+            crates9.SetActive(true);
+
+        }
+        if (score >= 50)
+        {
+            indicator.SetActive(true);
+            crates10.SetActive(true);
+
+        }
 
         ///chickrn
         ///
@@ -128,8 +207,17 @@ public class PlayerController3 : Singleton<PlayerController3>
         {
             friedchicken5.SetActive(true);
             heart5.SetActive(false);
+            losepanel.SetActive(false);
             ////  GameObject ENF
         }
+
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            winpanel.SetActive(true);
+        }
+
+
     }
 
 
