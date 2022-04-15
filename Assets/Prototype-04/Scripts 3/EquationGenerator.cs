@@ -46,13 +46,13 @@ public class EquationGenerator : Singleton<EquationGenerator>
     private void Start()
     {
         InvokeRepeating("EatFood", 2.0f, 3f);
-        InvokeRepeating("Attack", 10f, 7f);
+        InvokeRepeating("Attack", 7f, 7f);
 
         additionpanel.SetActive(false);
         multiplypanel.SetActive(false);
         divisionpanel.SetActive(false);
 
-        Ascore = 20;
+        Ascore = 5;
         Dscore = 0;
         Mscore = 20;
     }
@@ -85,6 +85,18 @@ public class EquationGenerator : Singleton<EquationGenerator>
             UpdateInterface();
         }
 
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Ascore += 1;
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Ascore -= 1;
+        }
+
         AscoreText.text = "score: " + Ascore;
         DscoreText.text = "score: " + Dscore;
         MscoreText.text = "score: " + Mscore;
@@ -97,8 +109,24 @@ public class EquationGenerator : Singleton<EquationGenerator>
         {
 //loose
         }
+        if (Ascore == 2)
+        {
+            //loose
+        }
+        if (Ascore == 3)
+        {
+            //loose
+        }
+        if (Ascore == 4)
+        {
+            //loose
+        }
+        if (Ascore == 5)
+        {
+            //loose
+        }
 
-        if (Ascore == 20)
+        if (Ascore == 25)
         {
 //win
         }
@@ -140,7 +168,7 @@ public class EquationGenerator : Singleton<EquationGenerator>
 
     public void GenerateAddition()
     {
-        if (activequestion == false)
+        if (activequestion == false && score >= 1)
         {
             numberOne = GetRandomNumbers();
             numberTwo = GetRandomNumbers();
@@ -152,6 +180,7 @@ public class EquationGenerator : Singleton<EquationGenerator>
             symbol.text = "+";
             activequestion = true;
             additionpanel.SetActive(true);
+            score -= 1;
             UpdateInterface();
         }
     }
@@ -270,7 +299,7 @@ public class EquationGenerator : Singleton<EquationGenerator>
 
         additionpanel.SetActive(false);
         Ascore += 1;
-        score += 1;
+       // score += 1;
         activequestion = false;
 
     }
@@ -301,6 +330,6 @@ public class EquationGenerator : Singleton<EquationGenerator>
 
     void Attack()
     {
-        Ascore -= 3;
+        Ascore -= 1;
     }
 }
