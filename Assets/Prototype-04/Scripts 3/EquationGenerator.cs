@@ -33,10 +33,13 @@ public class EquationGenerator : Singleton<EquationGenerator>
     public TMP_Text answer4;
     public TMP_Text answer5;
     public TMP_Text answer6;
+    public TMP_Text answer7;
+    public TMP_Text answer8;
 
     public GameObject additionpanel;
     public GameObject divisionpanel;
     public GameObject multiplypanel;
+    public GameObject subtractionpanel;
 
     public int Ascore;
     public int Dscore;
@@ -66,6 +69,7 @@ public class EquationGenerator : Singleton<EquationGenerator>
         additionpanel.SetActive(false);
         multiplypanel.SetActive(false);
         divisionpanel.SetActive(false);
+        subtractionpanel.SetActive(false);
 
         losepanel.SetActive(false);
         winpanel.SetActive(false);
@@ -219,6 +223,10 @@ public class EquationGenerator : Singleton<EquationGenerator>
         Debug.Log(numberOne + " - " + numberTwo + " = " + correctAnswer);
 
         GenerateDummyAnswers();
+        symbol.text = "-";
+        activequestion = true;
+        subtractionpanel.SetActive(true);
+        UpdateInterface();
 
     }
 
@@ -290,6 +298,8 @@ public class EquationGenerator : Singleton<EquationGenerator>
         answer4.text = dummyAnswers[Random.Range(0, dummyAnswers.Count)].ToString();
         answer5.text = dummyAnswers[Random.Range(0, dummyAnswers.Count)].ToString();
         answer6.text = dummyAnswers[Random.Range(0, dummyAnswers.Count)].ToString();
+        answer7.text = dummyAnswers[Random.Range(0, dummyAnswers.Count)].ToString();
+        answer8.text = dummyAnswers[Random.Range(0, dummyAnswers.Count)].ToString();
 
 
 
@@ -340,11 +350,19 @@ public class EquationGenerator : Singleton<EquationGenerator>
      
     }
 
+    public void addfunds()
+    {
+        score += 3;
+        subtractionpanel.SetActive(false);
+        activequestion = false;
+    }
+
     public void FalseAnswer()
     {
         additionpanel.SetActive(false);
         multiplypanel.SetActive(false);
         divisionpanel.SetActive(false);
+        subtractionpanel.SetActive(false);
         activequestion = false;
     }
 
