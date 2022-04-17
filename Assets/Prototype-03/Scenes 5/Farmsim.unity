@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 2b085ab593bade44f8e345aa295b31c6, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -23351,6 +23351,7 @@ GameObject:
   - component: {fileID: 469974927}
   - component: {fileID: 469974926}
   - component: {fileID: 469974930}
+  - component: {fileID: 469974931}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -23469,6 +23470,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 2006174815}
   paused: 0
+--- !u!114 &469974931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469974925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c755247420a3046b142aebdad51955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &470654810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -107102,6 +107115,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2678767078814302074, guid: 5012b887d9a6fd34780ce14e071efe4b, type: 3}
       propertyPath: m_Name
+      value: Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678767078961839566, guid: 5012b887d9a6fd34780ce14e071efe4b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 469974931}
+    - target: {fileID: 2678767078961839566, guid: 5012b887d9a6fd34780ce14e071efe4b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678767079187312740, guid: 5012b887d9a6fd34780ce14e071efe4b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 469974931}
+    - target: {fileID: 2678767079187312740, guid: 5012b887d9a6fd34780ce14e071efe4b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678767079610387773, guid: 5012b887d9a6fd34780ce14e071efe4b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 469974930}
+    - target: {fileID: 2678767079610387773, guid: 5012b887d9a6fd34780ce14e071efe4b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Pause
       objectReference: {fileID: 0}
     m_RemovedComponents: []

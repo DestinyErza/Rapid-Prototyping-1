@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AntManager : MonoBehaviour
 {
@@ -32,6 +33,10 @@ public class AntManager : MonoBehaviour
     public GameObject ant23;
     public GameObject ant24;
     public GameObject ant25;
+
+    public Button button1;
+    public Button button2;
+    public Button button3;
 
 
     // Start is called before the first frame update
@@ -72,6 +77,9 @@ public class AntManager : MonoBehaviour
 
         if (EG.Ascore == 0)
         {
+            button1.interactable = false;
+            button2.interactable = false;
+            button3.interactable = false;
 
             ant1.SetActive(false);
             ant2.SetActive(false);
@@ -102,7 +110,9 @@ public class AntManager : MonoBehaviour
 
         if (EG.Ascore == 1)
         {
-           
+            button1.interactable = true;
+            button2.interactable = false;
+            button3.interactable = false;
             ant1.SetActive(true);
 
             ant2.SetActive(false);
@@ -133,6 +143,11 @@ public class AntManager : MonoBehaviour
 
         if (EG.Ascore == 2)
         {
+
+
+            button1.interactable = true;
+            button2.interactable = true;
+            button3.interactable = false;
             ant2.SetActive(true);
 
             ant3.SetActive(false);
@@ -162,6 +177,11 @@ public class AntManager : MonoBehaviour
 
         if (EG.Ascore == 3)
         {
+
+            button1.interactable = true;
+            button2.interactable = true;
+            button3.interactable = true;
+            
             ant3.SetActive(true);
 
         
@@ -190,7 +210,9 @@ public class AntManager : MonoBehaviour
         }
         if (EG.Ascore == 4)
         {
-
+            button1.interactable = true;
+            button2.interactable = true;
+            button3.interactable = true;
             ant4.SetActive(true);
 
             ant5.SetActive(false);
@@ -217,6 +239,9 @@ public class AntManager : MonoBehaviour
         }
         if (EG.Ascore == 5)
         {
+            button1.interactable = true;
+            button2.interactable = true;
+            button3.interactable = true;
             ant5.SetActive(true);
 
             ant6.SetActive(false);
@@ -242,6 +267,9 @@ public class AntManager : MonoBehaviour
         }
         if (EG.Ascore == 6)
         {
+            button1.interactable = true;
+            button2.interactable = true;
+            button3.interactable = true;
             ant6.SetActive(true);
 
             ant7.SetActive(false);
@@ -266,6 +294,9 @@ public class AntManager : MonoBehaviour
         }
         if (EG.Ascore == 7)
         {
+            button1.interactable = true;
+            button2.interactable = true;
+            button3.interactable = true;
             ant7.SetActive(true);
 
             ant8.SetActive(false);
@@ -290,6 +321,9 @@ public class AntManager : MonoBehaviour
 
         if (EG.Ascore == 8)
         {
+            button1.interactable = true;
+            button2.interactable = true;
+            button3.interactable = true;
             ant8.SetActive(true);
 
             ant9.SetActive(false);
@@ -312,6 +346,9 @@ public class AntManager : MonoBehaviour
         }
         if (EG.Ascore == 9)
         {
+            button1.interactable = true;
+            button2.interactable = true;
+            button3.interactable = true;
             ant9.SetActive(true);
 
             ant10.SetActive(false);
@@ -333,6 +370,9 @@ public class AntManager : MonoBehaviour
         }
         if (EG.Ascore == 10)
         {
+            button1.interactable = true;
+            button2.interactable = true;
+            button3.interactable = true;
             ant10.SetActive(true);
 
             ant11.SetActive(false);

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class EquationGenerator : Singleton<EquationGenerator>
 {
@@ -9,9 +10,9 @@ public class EquationGenerator : Singleton<EquationGenerator>
 
     public Difficulty difficulty;
 
-    public float numberOne;
-    public float numberTwo;
-    public float correctAnswer;
+    public int numberOne;
+    public int numberTwo;
+    public int correctAnswer;
 
 
     public TMP_Text symbol;
@@ -26,6 +27,12 @@ public class EquationGenerator : Singleton<EquationGenerator>
     public TMP_Text MscoreText;
     public TMP_Text scoretext;
 
+    public TMP_Text answer1;
+    public TMP_Text answer2;
+    public TMP_Text answer3;
+    public TMP_Text answer4;
+    public TMP_Text answer5;
+    public TMP_Text answer6;
 
     public GameObject additionpanel;
     public GameObject divisionpanel;
@@ -36,21 +43,32 @@ public class EquationGenerator : Singleton<EquationGenerator>
     public int Mscore;
     public int score;
 
+    public GameObject losepanel;
+    public GameObject winpanel;
+
+
+
 
     public bool activequestion = false;
 
     public TMP_Text[] answerPoints;
 
-    public List<float> dummyAnswers;
+    public List<int> dummyAnswers;
+
+
 
     private void Start()
     {
+       
         InvokeRepeating("EatFood", 2.0f, 3f);
         InvokeRepeating("Attack", 7f, 7f);
 
         additionpanel.SetActive(false);
         multiplypanel.SetActive(false);
         divisionpanel.SetActive(false);
+
+        losepanel.SetActive(false);
+        winpanel.SetActive(false);
 
         Ascore = 5;
         Dscore = 0;
@@ -60,6 +78,12 @@ public class EquationGenerator : Singleton<EquationGenerator>
 
     void Update()
     {
+        // Debug.Log(Dscore);
+       ///  if (Input.GetKeyDown(KeyCode.Z))
+       // { Division(); }
+          
+
+
         if (Input.GetKeyDown(KeyCode.M))
         {
             GenerateMultiplication();
@@ -88,7 +112,7 @@ public class EquationGenerator : Singleton<EquationGenerator>
 
         if (Input.GetKeyDown(KeyCode.K))
         {
-            Ascore += 1;
+           Ascore += 1;
         }
 
 
@@ -98,7 +122,7 @@ public class EquationGenerator : Singleton<EquationGenerator>
         }
 
         AscoreText.text = "score: " + Ascore;
-        DscoreText.text = "score: " + Dscore;
+        DscoreText.text = "score: " + Dscore + "/10";
         MscoreText.text = "score: " + Mscore;
         scoretext.text = "funds: " + score;
         //  if (Input.GetKeyDown(KeyCode.R))
@@ -107,28 +131,29 @@ public class EquationGenerator : Singleton<EquationGenerator>
 
         if (Ascore == 0)
         {
-//loose
+            losepanel.SetActive(true);
+           
         }
         if (Ascore == 2)
         {
-            //loose
+         
         }
         if (Ascore == 3)
         {
-            //loose
+          
         }
         if (Ascore == 4)
         {
-            //loose
+           
         }
         if (Ascore == 5)
         {
-            //loose
+            
         }
 
         if (Ascore == 25)
         {
-//win
+            winpanel.SetActive(true);
         }
 
     }
@@ -242,7 +267,7 @@ public class EquationGenerator : Singleton<EquationGenerator>
     {
         for (int i = 0; i < dummyAnswers.Count; i++)
         {
-            float dummy;
+            int dummy;
             do
             {
                 dummy = Random.Range(correctAnswer - 10, correctAnswer + 10);
@@ -259,9 +284,16 @@ public class EquationGenerator : Singleton<EquationGenerator>
         answerD.text = correctAnswer.ToString();
         answerM.text = correctAnswer.ToString();
         answerA.text = correctAnswer.ToString();
+        answer1.text = dummyAnswers[Random.Range(0, dummyAnswers.Count)].ToString();
+        answer2.text = dummyAnswers[Random.Range(0, dummyAnswers.Count)].ToString();
+        answer3.text = dummyAnswers[Random.Range(0, dummyAnswers.Count)].ToString();
+        answer4.text = dummyAnswers[Random.Range(0, dummyAnswers.Count)].ToString();
+        answer5.text = dummyAnswers[Random.Range(0, dummyAnswers.Count)].ToString();
+        answer6.text = dummyAnswers[Random.Range(0, dummyAnswers.Count)].ToString();
 
-    
-       // answerPoints.text = ""+ correctAnswer;
+
+
+        // answerPoints.text = ""+ correctAnswer;
         // AnswerLocation();
     }
     public void UpdateTexts(string[] answerPoints)
@@ -278,8 +310,12 @@ public class EquationGenerator : Singleton<EquationGenerator>
         randomLoca.text = correctAnswer.ToString();
     }
 
-
-    public void Division()
+  //  Debug.Log(Dscore);
+      //  if (Input.GetKey(KeyCode.Z))
+        
+        //    Dscore += 1;
+        
+   public void Division()
     {
         Dscore += 1;
         score += 1;
@@ -301,7 +337,7 @@ public class EquationGenerator : Singleton<EquationGenerator>
         Ascore += 1;
        // score += 1;
         activequestion = false;
-
+     
     }
 
     public void FalseAnswer()
@@ -332,4 +368,6 @@ public class EquationGenerator : Singleton<EquationGenerator>
     {
         Ascore -= 1;
     }
+
+
 }

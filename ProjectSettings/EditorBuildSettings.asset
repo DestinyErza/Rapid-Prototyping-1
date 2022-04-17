@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Universal/scenes 1/Main_Menu.unity
     guid: a60f5f78480ab114ab4bd94d3556ffbf
-  - enabled: 1
+  - enabled: 0
     path: Assets/Prototype-01/Scenes 1/Ball Of Duty.unity
     guid: 4213fe64857e392418f897c8d4cf2c78
   - enabled: 1
@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Prototype-04/Scenes 3/Math_Game.unity
     guid: 088ebc67d7daddb48adc64c43c7f2946
+  - enabled: 1
+    path: Assets/Prototype-01/Scenes 1/Ball Of Duty Final.unity
+    guid: 531bc3accaf71e04896fe76736d4d3ae
   m_configObjects: {}
