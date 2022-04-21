@@ -42119,7 +42119,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -854.2, y: -429.06}
+  m_AnchoredPosition: {x: -854.2, y: -319}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &863831211
@@ -42144,14 +42144,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'W = Move Forward
 
-    A/D = rotate
+    A/D = rotate collector and water
+
+    Z/C = Rotate
+    cloud
 
     Water Can waters
 
     Box collects
 
-    AVOID
-    chickens!
+    AVOID chickens!
 
 '
   m_isRightToLeft: 0
@@ -60382,6 +60384,7 @@ MonoBehaviour:
   friedchicken5: {fileID: 0}
   f_speed: 5
   speed: 2
+  Rspeed: 3
   heart: {fileID: 0}
   heart2: {fileID: 0}
   heart3: {fileID: 0}
@@ -102780,13 +102783,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065409668}
-  m_LocalRotation: {x: -0.30695134, y: -0.61885124, z: 0.30201888, w: -0.65695405}
-  m_LocalPosition: {x: -0.04218091, y: 0.1139, z: -0.0040732203}
+  m_LocalRotation: {x: -0.25635207, y: -0.6462817, z: 0.23704094, w: -0.67853904}
+  m_LocalPosition: {x: -0.056, y: 0.1076, z: -0.0027}
   m_LocalScale: {x: 0.012679999, y: 0.012679999, z: 0.012679999}
   m_Children: []
   m_Father: {fileID: 4131071596577141483}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50.997, y: -274.156, z: -1.54}
+  m_LocalEulerAnglesHint: {x: 40.865, y: -272.517, z: 0.733}
 --- !u!1001 &2066583634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -106995,6 +106998,7 @@ MonoBehaviour:
   friedchicken5: {fileID: 1917992237}
   f_speed: 5
   speed: 2
+  Rspeed: 3
   heart: {fileID: 1725554171}
   heart2: {fileID: 1016242213}
   heart3: {fileID: 2097699490}

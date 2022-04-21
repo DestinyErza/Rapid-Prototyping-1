@@ -20,7 +20,12 @@ public class PlayerController1 : Singleton<PlayerController1>
     public int score;
     public TMP_Text scoreText;
     public TMP_Text winText;
+    public Camera cam1;
+    public Camera cam2;
+    public TMP_Text camText;
+    public GameObject camimage;
 
+   
 
     RigidbodyFirstPersonController fpc;
    
@@ -28,13 +33,16 @@ public class PlayerController1 : Singleton<PlayerController1>
 
     void Start()
     {
+        InitiatePanel.SetActive(false);
+        camimage.SetActive(false);
         playerRb = GetComponent<Rigidbody>();
         InitiateDialogue.text = "";
         WinPanel.SetActive(false);
         Time.timeScale = 1;
-        InitiatePanel.SetActive(false);
+      
         fpc = GetComponent<RigidbodyFirstPersonController>();
-       
+        cam1.enabled = true;
+        cam2.enabled = false;
     }
    
 
@@ -56,19 +64,30 @@ public class PlayerController1 : Singleton<PlayerController1>
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             AddScore();
+            CameraToggle();
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             MinusScore();
+            CameraToggle();
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             Win();
         }
-    
-
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Alpha6))
         {
+
+            cam1.enabled = !cam1.enabled;
+            cam2.enabled = !cam2.enabled;
+            camimage.SetActive(false) ;
+            camText.text = "";
+        }
+
+            if (Input.GetKeyDown(KeyCode.Q))
+        {
+
+            
             InitiatePanel.SetActive(false);
             
         }
@@ -101,14 +120,25 @@ public class PlayerController1 : Singleton<PlayerController1>
         score += 1;
         // ButtonPanel.SetActive(false);
         Time.timeScale = 1;
+       
     }
 
     public void MinusScore()
     {
+       
         score -= 1;
         Time.timeScale = 1;
     }
 
+    public void CameraToggle()
+    {
+        cam1.enabled = !cam1.enabled;
+        cam2.enabled = !cam2.enabled;
+        camText.text = "press 6 to retun to player:)";
+        camimage.SetActive(true);
+    }
+   
+    
     public void Continue()
     {
         Time.timeScale = 1;

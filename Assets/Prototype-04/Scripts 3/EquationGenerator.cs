@@ -126,6 +126,8 @@ public class EquationGenerator : Singleton<EquationGenerator>
             Ascore -= 1;
         }
 
+      
+
         AscoreText.text = "score: " + Ascore + "/25";
         DscoreText.text = "score: " + Dscore + "/10";
         MscoreText.text = "score: " + Mscore;
@@ -160,6 +162,13 @@ public class EquationGenerator : Singleton<EquationGenerator>
         {
             winpanel.SetActive(true);
         }
+
+        if (Mscore <= 0)
+        { score = 0; }
+
+
+        Mathf.Max(0, 100);
+        //Mscore = Mathf.Clamp(20, 0, 100);
 
     }
 
@@ -376,16 +385,21 @@ public class EquationGenerator : Singleton<EquationGenerator>
 
     void EatFood()
     {
-       Mscore -= 1;
-        if (Mscore <= 1) 
-        {
-         //   Mscore -= 1;
-        }
+       Mscore -= 2;
+     
+
+
     }
 
     void Attack()
     {
-        Ascore -= 1;
+     
+        if (Mscore <= 0)
+        {
+            Ascore -= 2;
+        }
+        else
+            Ascore -= 1;
     }
 
 

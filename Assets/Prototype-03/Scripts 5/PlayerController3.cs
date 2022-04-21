@@ -16,9 +16,11 @@ public class PlayerController3 : Singleton<PlayerController3>
 
     public float f_speed = 5;
     public float speed = 3.0f;
+
+    public float Rspeed = 20.0f;
     // private float rot = 0.0f;
 
-    
+
     public GameObject heart;
     public GameObject heart2;
     public GameObject heart3;
@@ -104,9 +106,31 @@ public class PlayerController3 : Singleton<PlayerController3>
         {
             transform.Translate(Vector3.right * f_speed * Time.deltaTime);
         }
-        transform.Rotate(0.0f, +Input.GetAxis ("Horizontal") * speed, 0.0f);
-        scoreText.text = "score: " + score;
+        //  transform.Rotate(0.0f, +Input.GetAxis ("Horizontal") * speed, 0.0f);
+        if (Input.GetKey("z"))
+        {
+            transform.Rotate(Vector3.up * Time.deltaTime * 100);
+        }
+
+
+
+        if (Input.GetKey("c"))
+        {
+            transform.Rotate(Vector3.down * Time.deltaTime * 100);
+        }
+
+            scoreText.text = "score: " + score;
         chickenText.text = "chuickene: " + chickenscore;
+
+
+        if (Input.GetKey(KeyCode.Z))
+            transform.Rotate(Vector3.up * Rspeed * Time.deltaTime);
+
+        if (Input.GetKey(KeyCode.C))
+            transform.Rotate(-Vector3.up * Rspeed * Time.deltaTime);
+
+
+
         if (score == 1)
         {
             flower.SetActive(true);
