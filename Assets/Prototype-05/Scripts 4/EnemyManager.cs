@@ -2,11 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EnemyType
-{
-    OneHand,
-    TwoHand
-}
+
 public enum PatrolType
 {
     Patrol,
@@ -32,7 +28,7 @@ public class EnemyManager : Singleton<EnemyManager>
     {
         player = GameObject.FindGameObjectWithTag("Player");
 
-
+        SpawnWithDelay();
     }
     IEnumerator SpawnWithDelay()
     {
@@ -46,7 +42,7 @@ public class EnemyManager : Singleton<EnemyManager>
         //add enemy to list
         enemies.Add(enemy);
         //update the UI with new count score
-        _UI.UpdateEnemyCount(enemies.Count);
+       //    _UI.UpdateEnemyCount(enemies.Count);
         //wait for delay
         yield return new WaitForSeconds(spawnDelay);
         //run again
@@ -73,15 +69,15 @@ public class EnemyManager : Singleton<EnemyManager>
     {
         Destroy(_enemy);
         enemies.Remove(_enemy);
-        _UI.UpdateEnemyCount(enemies.Count);
+   //     _UI.UpdateEnemyCount(enemies.Count);
     }
 
     private void OnEnable()
     {
-        GameEvents.OnEnemyDied += KillEnemy;
+     //   GameEvents.OnEnemyDied += KillEnemy;
     }
     private void OnDisable()
     {
-        GameEvents.OnEnemyHit -= KillEnemy;
+     //   GameEvents.OnEnemyHit -= KillEnemy;
     }
 }

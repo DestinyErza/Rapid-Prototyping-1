@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class PlayerController5 : Singleton<PlayerController5>
 {
+
+    public GameObject hidingPanel;
+    public GameObject formPanel;
+    public GameObject pickupPanel;
     // Start is called before the first frame update
     void Start()
     {
-
+        hidingPanel.SetActive(false);
+        formPanel.SetActive(false);
+        pickupPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -15,30 +21,75 @@ public class PlayerController5 : Singleton<PlayerController5>
     {
         if (Input.GetKey(KeyCode.Alpha1))
         {
-            //wolf
+            
+            formPanel.SetActive(false);
+            
         }
         if (Input.GetKey(KeyCode.Alpha2))
         {
-            //gorl
+            formPanel.SetActive(true);
+
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.CompareTag("Hiding"))
-        {
-            //hidden
-        }
 
-        if (other.gameObject.CompareTag("light"))
-        {
-            //hidden
-        }
 
         if (other.gameObject.CompareTag("enemy + wolf"))
         {
             //hidden
         }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("hiding"))
+        {
+            //hidden
+            Debug.Log("hidden");
+            hidingPanel.SetActive(true);
+           
+        }
+
+        if (other.gameObject.CompareTag("light"))
+        {
+            
+            pickupPanel.SetActive(true);
+
+            if (Input.GetKey(KeyCode.E))
+            {
+                Destroy(other.gameObject);
+                formPanel.SetActive(false);
+                addlight();
+
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("hiding"))
+        {
+            //hidden
+            Debug.Log("hidden");
+            hidingPanel.SetActive(false);
+
+        }
+
+        if (other.gameObject.CompareTag("light"))
+        {
+
+            pickupPanel.SetActive(false);
+
+
+        }
+    }
+
+
+    public void addlight()
+    {
+
     }
 }

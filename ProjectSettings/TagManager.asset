@@ -23,6 +23,8 @@ TagManager:
   - chicken
   - plot
   - player
+  - light
+  - hiding
   layers:
   - Default
   - TransparentFX
