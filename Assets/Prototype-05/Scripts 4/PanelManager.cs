@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PanelManager : MonoBehaviour
+public class PanelManager : Singleton<PanelManager>
 {
     public GameObject hidingPanel;
     public GameObject wolfPanel;
+    public GameObject formPanel;
+    public GameObject hidePanel;
     public bool paused;
     void Start()
     {
@@ -14,6 +16,9 @@ public class PanelManager : MonoBehaviour
         paused = false;
         hidingPanel.SetActive(false);
         wolfPanel.SetActive(false);
+        formPanel.SetActive(false);
+        hidePanel.SetActive(false);
+
         Time.timeScale = 1;
     }
 
@@ -29,8 +34,9 @@ public class PanelManager : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         paused = !paused;
-        hidingPanel.SetActive(paused);
+       wolfPanel.SetActive(paused);
         Time.timeScale = paused ? 0 : 1;
+        formPanel.SetActive(true);
     }
     public void WolfC()
     {
@@ -38,6 +44,7 @@ public class PanelManager : MonoBehaviour
         
         Time.timeScale = paused ? 0 : 1;
         wolfPanel.SetActive(false);
+        formPanel.SetActive(true);
     }
 
     public void Hiding()
@@ -45,13 +52,15 @@ public class PanelManager : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         paused = !paused;
-        wolfPanel.SetActive(paused);
+        hidingPanel.SetActive(paused);
         Time.timeScale = paused ? 0 : 1;
+        hidePanel.SetActive(true);
     }
     public void HidingC()
     {
         paused = !paused;
         hidingPanel.SetActive(false);
         Time.timeScale = paused ? 0 : 1;
+        hidePanel.SetActive(true);
     }
 }

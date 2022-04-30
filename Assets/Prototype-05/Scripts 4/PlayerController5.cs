@@ -1,34 +1,63 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerController5 : Singleton<PlayerController5>
 {
 
-    public GameObject hidingPanel;
-    public GameObject formPanel;
+    PanelManager PM;
+  
     public GameObject pickupPanel;
+    public GameObject hidden;
+    public GameObject nothiding;
+    public GameObject wolff;
+    public GameObject humanf;
+    public GameObject win;
+    public GameObject lose;
+
+    public int Lightcount;
+    public TMP_Text lighttext;
     // Start is called before the first frame update
     void Start()
     {
-        hidingPanel.SetActive(false);
-        formPanel.SetActive(false);
+        Lightcount = 1;
+        wolff.SetActive(true);
+        humanf.SetActive(false);
+
+        win.SetActive(false);
+        hidden.SetActive(false);
+        nothiding.SetActive(true);
+
+        PM = PanelManager.instance;
+      
         pickupPanel.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        lighttext.text = Lightcount + "/6";
+
         if (Input.GetKey(KeyCode.Alpha1))
         {
-            
-            formPanel.SetActive(false);
-            
+            humanform();
+          
         }
         if (Input.GetKey(KeyCode.Alpha2))
         {
-            formPanel.SetActive(true);
-
+            wolfform();
+           
+        }
+        if (Input.GetKey(KeyCode.Alpha4))
+        {
+            PM.WolfC();
+         
+        }
+        if (Input.GetKey(KeyCode.Alpha3))
+        {
+           
+            PM.HidingC();
         }
     }
 
@@ -41,16 +70,33 @@ public class PlayerController5 : Singleton<PlayerController5>
         {
             //hidden
         }
+
+        if (other.gameObject.CompareTag("Event"))
+        {
+            PM.Hiding();
+        }
+        if (other.gameObject.CompareTag("wolfEvent"))
+        {
+            PM.Wolf();
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
+      
+
         if (other.gameObject.CompareTag("hiding"))
         {
             //hidden
             Debug.Log("hidden");
-            hidingPanel.SetActive(true);
-           
+            hidden.SetActive(true);
+            nothiding.SetActive(false);
+            Debug.Log("hidden");
+        }
+        else
+        {
+            hidden.SetActive(false);
+            nothiding.SetActive(true);
         }
 
         if (other.gameObject.CompareTag("light"))
@@ -67,38 +113,49 @@ public class PlayerController5 : Singleton<PlayerController5>
 
             }
         }
+
+        if (other.gameObject.CompareTag("Event1"))
+        {
+           if (Lightcount == 6)
+            {
+                win.SetActive(true);
+            }
+           
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("hiding"))
-        {
-            //hidden
-            Debug.Log("hidden");
-            hidingPanel.SetActive(false);
-
-        }
 
         if (other.gameObject.CompareTag("light"))
         {
-
             pickupPanel.SetActive(false);
-
-
         }
 
-        if (other.gameObject.CompareTag("Event"))
+        if (other.gameObject.CompareTag("hiding"))
         {
-
-          //stop player movement, have enemy move past 
-
-
+            hidden.SetActive(false);
+            nothiding.SetActive(true);
         }
+
     }
 
 
     public void addlight()
     {
+        Lightcount += 1;
         //+score
+    }
+
+    public void humanform()
+    {
+        wolff.SetActive(false);
+        humanf.SetActive(true);
+    }
+
+    public void wolfform()
+    {
+        wolff.SetActive(true);
+        humanf.SetActive(false);
     }
 }

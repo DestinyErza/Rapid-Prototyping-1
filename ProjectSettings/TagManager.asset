@@ -26,6 +26,8 @@ TagManager:
   - light
   - hiding
   - Event
+  - Event1
+  - wolfEvent
   layers:
   - Default
   - TransparentFX
