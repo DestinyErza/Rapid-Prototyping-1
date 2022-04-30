@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Timer : MonoBehaviour
+public class Timer : Singleton<Timer>
 {
     float timer;
     public float currentTime;
@@ -14,12 +14,8 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-       
-
         if (isTiming)
-            currentTime += Time.deltaTime;
-
-        
+            currentTime += Time.deltaTime;  
     }
 
     /// <summary>

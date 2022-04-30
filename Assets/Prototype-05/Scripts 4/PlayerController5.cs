@@ -7,6 +7,7 @@ public class PlayerController5 : Singleton<PlayerController5>
 {
 
     PanelManager PM;
+    Timer TM;
   
     public GameObject pickupPanel;
     public GameObject hidden;
@@ -15,22 +16,30 @@ public class PlayerController5 : Singleton<PlayerController5>
     public GameObject humanf;
     public GameObject win;
     public GameObject lose;
+    public GameObject goalprompt;
+    public GameObject timewarning;
 
     public int Lightcount;
     public TMP_Text lighttext;
+    public TMP_Text wolftimer;
+
     // Start is called before the first frame update
     void Start()
     {
         Lightcount = 1;
         wolff.SetActive(true);
         humanf.SetActive(false);
-
+        goalprompt.SetActive(false);
         win.SetActive(false);
+        lose.SetActive(false);
         hidden.SetActive(false);
         nothiding.SetActive(true);
 
+        timewarning.SetActive(false);
+
         PM = PanelManager.instance;
-      
+        TM = Timer.instance;
+
         pickupPanel.SetActive(false);
     }
 
@@ -38,8 +47,19 @@ public class PlayerController5 : Singleton<PlayerController5>
     void Update()
     {
         lighttext.text = Lightcount + "/6";
+        wolftimer.text = TM.currentTime.ToString("F2");
 
-        if (Input.GetKey(KeyCode.Alpha1))
+
+        if (TM.currentTime >= 5)
+        {
+            timewarning.SetActive(true);
+        }
+            // if (TM.currentTime >= 5)
+            // {
+            //     lose.SetActive(true);
+            // }
+
+            if (Input.GetKey(KeyCode.Alpha1))
         {
             humanform();
           
@@ -120,6 +140,10 @@ public class PlayerController5 : Singleton<PlayerController5>
             {
                 win.SetActive(true);
             }
+            else
+            {
+                goalprompt.SetActive(true);
+            }
            
         }
     }
@@ -138,6 +162,12 @@ public class PlayerController5 : Singleton<PlayerController5>
             nothiding.SetActive(true);
         }
 
+        if (other.gameObject.CompareTag("Event1"))
+        {
+         
+                goalprompt.SetActive(false);
+        }
+
     }
 
 
@@ -149,12 +179,14 @@ public class PlayerController5 : Singleton<PlayerController5>
 
     public void humanform()
     {
+        TM.PauseTimer();
         wolff.SetActive(false);
         humanf.SetActive(true);
     }
 
     public void wolfform()
     {
+        TM.ResumeTimer();
         wolff.SetActive(true);
         humanf.SetActive(false);
     }
