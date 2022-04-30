@@ -25,6 +25,7 @@ TagManager:
   - player
   - light
   - hiding
+  - Event
   layers:
   - Default
   - TransparentFX

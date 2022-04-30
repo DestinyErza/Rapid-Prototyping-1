@@ -61,7 +61,8 @@ public class PlayerController5 : Singleton<PlayerController5>
             if (Input.GetKey(KeyCode.E))
             {
                 Destroy(other.gameObject);
-                formPanel.SetActive(false);
+                //formPanel.SetActive(false);
+                pickupPanel.SetActive(false);
                 addlight();
 
             }
@@ -85,11 +86,19 @@ public class PlayerController5 : Singleton<PlayerController5>
 
 
         }
+
+        if (other.gameObject.CompareTag("Event"))
+        {
+
+          //stop player movement, have enemy move past 
+
+
+        }
     }
 
 
     public void addlight()
     {
-
+        //+score
     }
 }
