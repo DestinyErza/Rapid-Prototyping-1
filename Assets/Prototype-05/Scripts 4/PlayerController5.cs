@@ -16,31 +16,52 @@ public class PlayerController5 : Singleton<PlayerController5>
     public GameObject humanf;
     public GameObject win;
     public GameObject lose;
+    public GameObject wlose;
     public GameObject goalprompt;
     public GameObject timewarning;
+    public GameObject rocks;
 
     public int Lightcount;
     public TMP_Text lighttext;
     public TMP_Text wolftimer;
 
+
+    public int health;
+    public GameObject health0;
+    public GameObject health1;
+    public GameObject health2;
+    public GameObject health3;
+    public GameObject health4;
+    public GameObject health5;
     // Start is called before the first frame update
     void Start()
     {
+        PM = PanelManager.instance;
+        TM = Timer.instance;
+
+        health = 5;
+
         Lightcount = 1;
         wolff.SetActive(true);
         humanf.SetActive(false);
         goalprompt.SetActive(false);
         win.SetActive(false);
         lose.SetActive(false);
+        wlose.SetActive(false);
         hidden.SetActive(false);
         nothiding.SetActive(true);
-
+        rocks.SetActive(false);
         timewarning.SetActive(false);
-
-        PM = PanelManager.instance;
-        TM = Timer.instance;
-
         pickupPanel.SetActive(false);
+
+        health0.SetActive(false);
+        health1.SetActive(false);
+        health2.SetActive(false);
+        health3.SetActive(false);
+        health4.SetActive(false);
+        health5.SetActive(true);
+
+
     }
 
     // Update is called once per frame
@@ -50,41 +71,90 @@ public class PlayerController5 : Singleton<PlayerController5>
         wolftimer.text = TM.currentTime.ToString("F2");
 
 
-        if (TM.currentTime >= 5)
+        if (TM.currentTime >= 7)
         {
             timewarning.SetActive(true);
         }
-            // if (TM.currentTime >= 5)
-            // {
-            //     lose.SetActive(true);
-            // }
-
-            if (Input.GetKey(KeyCode.Alpha1))
+        if (TM.currentTime >= 15)
         {
-            humanform();
-          
+            wlose.SetActive(true);
+        }
+
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            humanform();  
         }
         if (Input.GetKey(KeyCode.Alpha2))
         {
-            wolfform();
-           
+            wolfform();   
         }
         if (Input.GetKey(KeyCode.Alpha4))
         {
             PM.WolfC();
-         
         }
         if (Input.GetKey(KeyCode.Alpha3))
-        {
-           
+        { 
             PM.HidingC();
+        }
+
+        if (health == 0)
+        {
+            lose.SetActive(true);
+        }
+        if (health == 1)
+        {
+            health0.SetActive(false);
+            health1.SetActive(true);
+            health2.SetActive(false);
+            health3.SetActive(false);
+            health4.SetActive(false);
+            health5.SetActive(false);
+        }
+        if (health == 2)
+        {
+            health0.SetActive(false);
+            health1.SetActive(false);
+            health2.SetActive(true);
+            health3.SetActive(false);
+            health4.SetActive(false);
+            health5.SetActive(false);
+        }
+        if (health == 3)
+        {
+            health0.SetActive(false);
+            health1.SetActive(false);
+            health2.SetActive(false);
+            health3.SetActive(true);
+            health4.SetActive(false);
+            health5.SetActive(false);
+        }
+        if (health == 4)
+        {
+            health0.SetActive(false);
+            health1.SetActive(false);
+            health2.SetActive(false);
+            health3.SetActive(false);
+            health4.SetActive(true);
+            health5.SetActive(false);
+        }
+        if (health == 5)
+        {
+            health0.SetActive(false);
+            health1.SetActive(false);
+            health2.SetActive(false);
+            health3.SetActive(false);
+            health4.SetActive(false);
+            health5.SetActive(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha9))
+        {
+            health -= 1;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-
-
 
         if (other.gameObject.CompareTag("enemy + wolf"))
         {
@@ -167,8 +237,11 @@ public class PlayerController5 : Singleton<PlayerController5>
          
                 goalprompt.SetActive(false);
         }
-
-    }
+        if (other.gameObject.CompareTag("Event2"))
+        {
+            rocks.SetActive(true);
+        }
+        }
 
 
     public void addlight()

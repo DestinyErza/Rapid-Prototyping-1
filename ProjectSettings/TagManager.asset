@@ -28,6 +28,7 @@ TagManager:
   - Event
   - Event1
   - wolfEvent
+  - Event2
   layers:
   - Default
   - TransparentFX
