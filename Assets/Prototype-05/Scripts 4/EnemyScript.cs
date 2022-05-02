@@ -125,7 +125,7 @@ public class EnemyScript : MonoBehaviour
         if (!attacking)
         {
             attacking = true;
-            anim.SetTrigger("Attack");
+          //  anim.SetTrigger("Attack");
             StartCoroutine(ResetAttack());
         }
     }

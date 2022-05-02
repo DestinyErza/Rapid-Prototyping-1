@@ -8,6 +8,7 @@ public class PlayerController5 : Singleton<PlayerController5>
 
     PanelManager PM;
     Timer TM;
+    EnemyManager EM;
   
     public GameObject pickupPanel;
     public GameObject hidden;
@@ -27,6 +28,7 @@ public class PlayerController5 : Singleton<PlayerController5>
 
 
     public int health;
+    public bool wolf = false;
     public GameObject health0;
     public GameObject health1;
     public GameObject health2;
@@ -38,6 +40,7 @@ public class PlayerController5 : Singleton<PlayerController5>
     {
         PM = PanelManager.instance;
         TM = Timer.instance;
+        EM = EnemyManager.instance;
 
         health = 5;
 
@@ -67,6 +70,7 @@ public class PlayerController5 : Singleton<PlayerController5>
     // Update is called once per frame
     void Update()
     {
+   
         lighttext.text = Lightcount + "/6";
         wolftimer.text = TM.currentTime.ToString("F2");
 
@@ -82,11 +86,13 @@ public class PlayerController5 : Singleton<PlayerController5>
 
         if (Input.GetKey(KeyCode.Alpha1))
         {
-            humanform();  
+            humanform();
+            wolf = false;
         }
         if (Input.GetKey(KeyCode.Alpha2))
         {
-            wolfform();   
+            wolfform();
+            wolf = true;
         }
         if (Input.GetKey(KeyCode.Alpha4))
         {
@@ -95,6 +101,12 @@ public class PlayerController5 : Singleton<PlayerController5>
         if (Input.GetKey(KeyCode.Alpha3))
         { 
             PM.HidingC();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            Debug.Log("press6");
+            StartCoroutine( EM.SpawnWithDelay());
         }
 
         if (health == 0)
@@ -156,9 +168,19 @@ public class PlayerController5 : Singleton<PlayerController5>
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.CompareTag("enemy + wolf"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            //hidden
+            if (wolf == true)
+            {
+                Destroy(other.gameObject);
+                EM.KillEnemy(other.gameObject);
+            }
+            else if(wolf == false)
+            {
+                health -= 1;
+            }
+            // if(bool for wolf)
+          
         }
 
         if (other.gameObject.CompareTag("Event"))

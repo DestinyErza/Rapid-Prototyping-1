@@ -17,8 +17,8 @@ public class EnemyManager : Singleton<EnemyManager>
     public GameObject[] enemyTypes;
     public List<GameObject> enemies;
     public GameObject player;
-    public float spawnDelay = 2f;
-    public int maxEnemies = 3;
+    public float spawnDelay = 5f;
+    public int maxEnemies = 7;
 
 
     public PatrolType patrolType;
@@ -28,11 +28,21 @@ public class EnemyManager : Singleton<EnemyManager>
     {
         player = GameObject.FindGameObjectWithTag("Player");
 
-        SpawnWithDelay();
+        StartCoroutine(SpawnWithDelay());
     }
-    IEnumerator SpawnWithDelay()
+
+    void Update()
     {
 
+    
+
+    }
+
+
+    public IEnumerator SpawnWithDelay()
+    {
+        Debug.Log("testing");
+   
         //spawn randm enemy
         int rndEnemy = Random.Range(0, enemyTypes.Length);
         //randm spawn
@@ -65,7 +75,7 @@ public class EnemyManager : Singleton<EnemyManager>
     }
 
     //kills enemy on death, removes game object
-    void KillEnemy(GameObject _enemy)
+    public void KillEnemy(GameObject _enemy)
     {
         Destroy(_enemy);
         enemies.Remove(_enemy);

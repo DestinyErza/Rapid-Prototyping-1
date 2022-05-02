@@ -25,8 +25,7 @@ public class PanelManager : Singleton<PanelManager>
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-            Wolf();
+    
     }
 
     public void Wolf()
