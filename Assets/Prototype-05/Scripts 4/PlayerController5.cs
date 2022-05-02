@@ -29,6 +29,7 @@ public class PlayerController5 : Singleton<PlayerController5>
 
     public int health;
     public bool wolf = false;
+    public bool hiding = false;
     public GameObject health0;
     public GameObject health1;
     public GameObject health2;
@@ -200,10 +201,10 @@ public class PlayerController5 : Singleton<PlayerController5>
         if (other.gameObject.CompareTag("hiding"))
         {
             //hidden
-            Debug.Log("hidden");
+           // Debug.Log("hidden");
             hidden.SetActive(true);
             nothiding.SetActive(false);
-            Debug.Log("hidden");
+            //Debug.Log("hidden");
         }
         else
         {

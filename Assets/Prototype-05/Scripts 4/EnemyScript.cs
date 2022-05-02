@@ -14,7 +14,7 @@ public class EnemyScript : MonoBehaviour
 
     public PatrolType patrolType;
 
-
+  
 
      Transform moveToPos;
    
@@ -95,8 +95,16 @@ public class EnemyScript : MonoBehaviour
                 {
                     if (distToPlayer <= detectDistance)
                     {
-                        patrolType = PatrolType.Chase;
-                        detectTime = 2f;
+                        if(_P.hiding == false)
+                        {
+                            patrolType = PatrolType.Chase;
+                            detectTime = 2f;
+                        }
+                        else if(_P.hiding == true)
+                        {
+                            patrolType = PatrolType.Patrol;
+                        }
+                      
                     }
 
                     else
