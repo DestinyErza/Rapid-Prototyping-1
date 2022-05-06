@@ -26,8 +26,8 @@ public class EnemyScript : MonoBehaviour
     Animator anim;
     NavMeshAgent agent;
     int currentWaypoint;
-    float detectDistance = 10f;
-    float detectTime = 5f;
+    float detectDistance = 15f;
+    float detectTime = 3f;
     float attackDistance = 3f;
     public bool attacking;
     public AudioSource enemyfootsteps;
@@ -59,7 +59,7 @@ public class EnemyScript : MonoBehaviour
     //changes between types of movement
     void Update()
     {
-
+        agent.enabled = true;
         float distToPlayer = Vector3.Distance(transform.position, _P.transform.position);
 
         if (distToPlayer <= attackDistance)
@@ -117,9 +117,10 @@ public class EnemyScript : MonoBehaviour
 
             case PatrolType.Patrol:
                 float distToWaypoint = Vector3.Distance(transform.position, _EM.spawnPoints[currentWaypoint].position);
-                if (distToWaypoint < 1)
+                if (distToWaypoint < 7)
                     SetNav();
                 detectTime = 2f;
+
 
 
                 break;
@@ -140,6 +141,7 @@ public class EnemyScript : MonoBehaviour
 
     void SetNav()
     {
+        
         currentWaypoint = Random.Range(0, _EM.spawnPoints.Length);
         agent.SetDestination(_EM.spawnPoints[currentWaypoint].position);
         ChangeSpeed(mySpeed);

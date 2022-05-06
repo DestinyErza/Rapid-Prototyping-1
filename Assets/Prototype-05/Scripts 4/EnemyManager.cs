@@ -41,7 +41,7 @@ public class EnemyManager : Singleton<EnemyManager>
 
     public IEnumerator SpawnWithDelay()
     {
-        Debug.Log("testing");
+       
    
         //spawn randm enemy
         int rndEnemy = Random.Range(0, enemyTypes.Length);

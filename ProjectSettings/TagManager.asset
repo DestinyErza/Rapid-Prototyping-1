@@ -29,6 +29,7 @@ TagManager:
   - Event1
   - wolfEvent
   - Event2
+  - ScriptedDeath
   layers:
   - Default
   - TransparentFX

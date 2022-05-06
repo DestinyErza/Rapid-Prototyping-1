@@ -9,6 +9,7 @@ public class PlayerController5 : Singleton<PlayerController5>
     PanelManager PM;
     Timer TM;
     EnemyManager EM;
+    monster_controlled MC;
   
     public GameObject pickupPanel;
     public GameObject hidden;
@@ -21,6 +22,7 @@ public class PlayerController5 : Singleton<PlayerController5>
     public GameObject goalprompt;
     public GameObject timewarning;
     public GameObject rocks;
+    public GameObject hurtPanel;
 
     public int Lightcount;
     public TMP_Text lighttext;
@@ -42,6 +44,7 @@ public class PlayerController5 : Singleton<PlayerController5>
         PM = PanelManager.instance;
         TM = Timer.instance;
         EM = EnemyManager.instance;
+        MC = monster_controlled.instance;
 
         health = 5;
 
@@ -65,7 +68,7 @@ public class PlayerController5 : Singleton<PlayerController5>
         health4.SetActive(false);
         health5.SetActive(true);
 
-
+        hurtPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -179,6 +182,8 @@ public class PlayerController5 : Singleton<PlayerController5>
             else if(wolf == false)
             {
                 health -= 1;
+              
+                StartCoroutine(hurtpanel());
             }
             // if(bool for wolf)
           
@@ -187,11 +192,22 @@ public class PlayerController5 : Singleton<PlayerController5>
         if (other.gameObject.CompareTag("Event"))
         {
             PM.Hiding();
+            MC.startmove();
         }
         if (other.gameObject.CompareTag("wolfEvent"))
         {
             PM.Wolf();
         }
+    }
+
+   public IEnumerator hurtpanel()
+    {
+
+        hurtPanel.SetActive(true);
+
+        yield return new WaitForSeconds(1);
+
+        hurtPanel.SetActive(false);
     }
 
     private void OnTriggerStay(Collider other)
