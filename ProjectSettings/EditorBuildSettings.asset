@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Prototype-01/Scenes 1/Ball Of Duty Final.unity
     guid: 531bc3accaf71e04896fe76736d4d3ae
+  - enabled: 1
+    path: Assets/Prototype-05/Scenes 4/REDWOLF.unity
+    guid: e514f87480e3d8945a5c37f25166b993
   m_configObjects: {}

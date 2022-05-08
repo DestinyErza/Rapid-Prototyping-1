@@ -10,7 +10,8 @@ public class PlayerController5 : Singleton<PlayerController5>
     Timer TM;
     EnemyManager EM;
     monster_controlled MC;
-  
+    SceneController SC;
+
     public GameObject pickupPanel;
     public GameObject hidden;
     public GameObject nothiding;
@@ -38,6 +39,8 @@ public class PlayerController5 : Singleton<PlayerController5>
     public GameObject health3;
     public GameObject health4;
     public GameObject health5;
+
+    public  AudioSource music;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +48,7 @@ public class PlayerController5 : Singleton<PlayerController5>
         TM = Timer.instance;
         EM = EnemyManager.instance;
         MC = monster_controlled.instance;
+        SC = SceneController.instance;
 
         health = 5;
 
@@ -76,7 +80,7 @@ public class PlayerController5 : Singleton<PlayerController5>
     {
    
         lighttext.text = Lightcount + "/6";
-        wolftimer.text = TM.currentTime.ToString("F2");
+        wolftimer.text = TM.currentTime.ToString("F2") + "/15" ;
 
 
         if (TM.currentTime >= 7)
@@ -107,15 +111,16 @@ public class PlayerController5 : Singleton<PlayerController5>
             PM.HidingC();
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha6))
+        if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            Debug.Log("press6");
-            StartCoroutine( EM.SpawnWithDelay());
+            SC.ToTitleScene();
         }
 
         if (health == 0)
         {
             lose.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
         if (health == 1)
         {
@@ -179,7 +184,8 @@ public class PlayerController5 : Singleton<PlayerController5>
                 Destroy(other.gameObject);
                 EM.KillEnemy(other.gameObject);
             }
-            else if(wolf == false)
+          
+            else if(wolf == false & hiding == false)
             {
                 health -= 1;
               
@@ -219,11 +225,13 @@ public class PlayerController5 : Singleton<PlayerController5>
             //hidden
            // Debug.Log("hidden");
             hidden.SetActive(true);
+            hiding = true;
             nothiding.SetActive(false);
             //Debug.Log("hidden");
         }
         else
         {
+            hiding = false;
             hidden.SetActive(false);
             nothiding.SetActive(true);
         }
@@ -248,6 +256,8 @@ public class PlayerController5 : Singleton<PlayerController5>
            if (Lightcount == 6)
             {
                 win.SetActive(true);
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
             }
             else
             {
@@ -269,16 +279,17 @@ public class PlayerController5 : Singleton<PlayerController5>
         {
             hidden.SetActive(false);
             nothiding.SetActive(true);
+            hiding = false;
         }
 
         if (other.gameObject.CompareTag("Event1"))
         {
-         
-                goalprompt.SetActive(false);
+           goalprompt.SetActive(false);
         }
         if (other.gameObject.CompareTag("Event2"))
         {
             rocks.SetActive(true);
+            music.Play(0);
         }
         }
 
